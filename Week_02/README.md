@@ -2,6 +2,7 @@
 _
 
 一、使用GCLogAnalysis.java 自己演练一遍串行/并行/CMS/G1的案例。
+
 1、串行GC：
 
 -Xms128m -Xmx128m的情况分析，命令如下：
