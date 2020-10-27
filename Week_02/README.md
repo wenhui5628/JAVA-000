@@ -1,5 +1,6 @@
 作业要求：
 1、使用GCLogAnalysis.java 自己演练一遍串行/并行/CMS/G1的案例。
+
 2、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
 3、写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801 ，代码提交到 Github。
