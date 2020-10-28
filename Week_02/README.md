@@ -61,7 +61,7 @@ java -XX:+UseParallelGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateSt
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-512.png)
 并行GC在Young GC过程中耗时相对于串行GC低，在Full GC过程中耗时平均大约是六十多毫秒，同等条件下，比串行GC执行Full GC耗时要高，整体看来Full GC的频率越来越高
 
-3、CMS GC
+3、CMS GC  
 -Xms128m -Xmx128m的情况分析，命令如下：  
 java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 
@@ -92,8 +92,17 @@ CMS GC收集器是一种以获取最短回收停顿时间为目标的收集器�
 java -XX:+UseG1GC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDateStamps GCLogAnalysis  
 
 运行结果：
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/G1-GC-512.png)
-
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/G1-GC-512.png)  
+从图中可以看到，G1 GC的垃圾收回周期会经过以下几个阶段：  
+Evacuation Pause: (young)（纯年轻代模式转移暂停）  
+Initial Mark（初始标记）  
+Root Region Scan（Root区扫描）   
+Concurrent Mark（并发标记）  
+Remark（再次标记）  
+Cleanup（清理）  
+Evacuation Pause (mixed)（转移暂停: 混合模式）  
+Full GC (Allocation Failure)  
+可以看到，G1收集器的运作过程跟CMS收集器的运作过程很相似，都有初始标记，并发标记，再次标记，清理等阶段，不同的是G1收集器在这几个阶段表现得更加优秀，从图中可以看到，CMS收集器中耗时最长的并发标记和并发清除，在G1收集器中的耗时远远低于CMS收集器中的耗时，G1收集器中还有Evacuation Pause: (young)和Evacuation Pause (mixed)这两个特有的阶段，这里还有疑问，需要问一下助教老师，这两个阶段主要做了什么事情？
 
 二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
