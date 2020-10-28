@@ -146,19 +146,22 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
 
 2、使用串行GC  
 
-（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+
 	RPS: 715.9 (requests/second)
 	Max: 356ms
 	Min: 0ms
 	Avg: 0.9ms
 
 （2）java -jar -XX:+UseSerialGC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar 
+
 	RPS: 753.7 (requests/second)
 	Max: 5314ms
 	Min: 0ms
 	Avg: 1ms
 
 （3）java -jar -XX:+UseSerialGC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar 
+
 	RPS: 697.7 (requests/second)
 	Max: 352ms
 	Min: 0ms
@@ -166,6 +169,7 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
 
 
 （4）java -jar -XX:+UseSerialGC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar 
+
 	RPS: 620.6 (requests/second)
 	Max: 4046ms
 	Min: 0ms
@@ -174,24 +178,28 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
 3、使用CMS  
 
 （1）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
 	RPS: 618.7 (requests/second)
 	Max: 5143ms
 	Min: 0ms
 	Avg: 2.2ms
 
 （2）java -jar -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
 	RPS: 634.5 (requests/second)
 	Max: 465ms
 	Min: 0ms
 	Avg: 1.6ms
 
 （3）java -jar -XX:+UseConcMarkSweepGC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar  
+
 	RPS: 618 (requests/second)
 	Max: 5498ms
 	Min: 0ms
 	Avg: 2.3ms
 
 （4）java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar   
+
 	RPS: 620.4 (requests/second)
 	Max: 5205ms
 	Min: 0ms
@@ -200,24 +208,28 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
 3、使用G1  
 
 （1）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
 	RPS: 729 (requests/second)
 	Max: 369ms
 	Min: 0ms
 	Avg: 1ms
 
 （2）java -jar -XX:+UseG1GC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar  
+
 	RPS: 693.1 (requests/second)
 	Max: 3703ms
 	Min: 0ms
 	Avg: 1.5ms
 
 （3）java -jar -XX:+UseG1GC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar   
+
 	RPS: 751.9 (requests/second)
 	Max: 3642ms
 	Min: 0ms
 	Avg: 1.9ms
 
 （4）java -jar -XX:+UseG1GC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar   
+
 	RPS: 742.8 (requests/second)
 	Max: 4440ms
 	Min: 0ms
@@ -229,30 +241,35 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
  sb -u http://localhost:8088/api/hello -c 100 -N 30 
  
 （1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
     RPS: 539.4 (requests/second)
     Max: 545ms
     Min: 0ms
     Avg: 39.1ms
 
 （2）java -jar -XX:+UseParallelGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
     RPS: 601.3 (requests/second)
     Max: 4364ms
     Min: 0ms
     Avg: 29ms
 
-（3）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+（3）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar  
+
     RPS: 658.6 (requests/second)
     Max: 484ms
     Min: 0ms
     Avg: 22.5ms
 
 （4）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
     RPS: 574.6 (requests/second)
     Max: 4534ms
     Min: 0ms
     Avg: 35.7ms
     
 增大并发数到100相较于20的并发数会导致RPS降低，同时导致请求响应时间增加，而垃圾回收算法对其影响不大，相对来说堆空间较大时，G1回收算法RPS最高，堆空间较小时，CMS算法最优
+
 
 
 三、写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801 ，代码提交到 Github。
