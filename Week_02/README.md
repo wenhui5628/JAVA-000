@@ -106,9 +106,10 @@ Full GC (Allocation Failure)
 
 最后总结一下，并行GC和串行GC相比，由于采用了多线程并行收集，在垃圾回收的执行时间上明显快不少，同时，通过实验可以看到，单纯增加堆内存大小不会获得预期的线性增长，当增加到1G时，垃圾回收器处理的性能提升会趋于平缓甚至有所下降，并行GC还有一个特点是吞吐量比较高，而GC收集器和G1收集器跟串行和并行GC相比，最大的特点是在并发标记和并发清除阶段，垃圾收集器线程都可以与用户线程一起工作，从而可以减少系统停顿时间，给用户带来更好的交互体验。
 
-二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
-使用以下命令进行压测
-sb -u http://localhost:8088/api/hello -c 20 -N 30
+二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。  
+
+使用以下命令进行压测  
+sb -u http://localhost:8088/api/hello -c 20 -N 30  
 
 测试结果如下：  
 1、使用默认并行GC
@@ -143,9 +144,9 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
 	Avg: 2.9ms
 
 
-2、使用串行GC
+2、使用串行GC  
 
-（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 715.9 (requests/second)
 	Max: 356ms
 	Min: 0ms
@@ -170,82 +171,82 @@ sb -u http://localhost:8088/api/hello -c 20 -N 30
 	Min: 0ms
 	Avg: 2ms
 
-3、使用CMS
+3、使用CMS  
 
-（1）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（1）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 618.7 (requests/second)
 	Max: 5143ms
 	Min: 0ms
 	Avg: 2.2ms
 
-（2）java -jar -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（2）java -jar -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 634.5 (requests/second)
 	Max: 465ms
 	Min: 0ms
 	Avg: 1.6ms
 
-（3）java -jar -XX:+UseConcMarkSweepGC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar 
+（3）java -jar -XX:+UseConcMarkSweepGC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar  
 	RPS: 618 (requests/second)
 	Max: 5498ms
 	Min: 0ms
 	Avg: 2.3ms
 
-（4）java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar 
+（4）java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 620.4 (requests/second)
 	Max: 5205ms
 	Min: 0ms
 	Avg: 2ms
 
-3、使用G1
+3、使用G1  
 
-（1）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（1）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 729 (requests/second)
 	Max: 369ms
 	Min: 0ms
 	Avg: 1ms
 
-（2）java -jar -XX:+UseG1GC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（2）java -jar -XX:+UseG1GC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar  
 	RPS: 693.1 (requests/second)
 	Max: 3703ms
 	Min: 0ms
 	Avg: 1.5ms
 
-（3）java -jar -XX:+UseG1GC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar 
+（3）java -jar -XX:+UseG1GC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 751.9 (requests/second)
 	Max: 3642ms
 	Min: 0ms
 	Avg: 1.9ms
 
-（4）java -jar -XX:+UseG1GC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar 
+（4）java -jar -XX:+UseG1GC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar   
 	RPS: 742.8 (requests/second)
 	Max: 4440ms
 	Min: 0ms
 	Avg: 1.5ms
     
-调整垃圾回收算法对20个并发请求数量级来说，压测的RPS基本都差不多
+调整垃圾回收算法对20个并发请求数量级来说，压测的RPS基本都差不多  
     
 调整并发请求数为100： 
  sb -u http://localhost:8088/api/hello -c 100 -N 30 
  
-（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
     RPS: 539.4 (requests/second)
     Max: 545ms
     Min: 0ms
     Avg: 39.1ms
 
-（2）java -jar -XX:+UseParallelGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（2）java -jar -XX:+UseParallelGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
     RPS: 601.3 (requests/second)
     Max: 4364ms
     Min: 0ms
     Avg: 29ms
 
-（3）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（3）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
     RPS: 658.6 (requests/second)
     Max: 484ms
     Min: 0ms
     Avg: 22.5ms
 
-（4）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+（4）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
     RPS: 574.6 (requests/second)
     Max: 4534ms
     Min: 0ms
