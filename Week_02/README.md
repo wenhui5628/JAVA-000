@@ -62,7 +62,7 @@ java -XX:+UseParallelGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateSt
 并行GC在Young GC过程中耗时相对于串行GC低，在Full GC过程中耗时平均大约是六十多毫秒，同等条件下，比串行GC执行Full GC耗时要高，整体看来Full GC的频率越来越高
 
 3、CMS GC
--Xms128m -Xmx128m的情况分析，命令如下：
+-Xms128m -Xmx128m的情况分析，命令如下：  
 java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 
 运行结果：
@@ -73,13 +73,26 @@ java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCD
 java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 
 运行结果：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/CMS-GC-512.png)  
+CMS GC收集器是一种以获取最短回收停顿时间为目标的收集器，是基于标记-清除算法实现的，运作过程相对于前面几种收集器来说要更复杂一些，
+从图中可以看到，CMS GC的垃圾收回周期会经过以下几个阶段：  
+阶段 1：Initial Mark（初始标记）  
+阶段 2：Concurrent Mark（并发标记）  
+阶段 3：Concurrent Preclean（并发预清理）  
+阶段 4： Final Remark（最终标记）  
+阶段 5： Concurrent Sweep（并发清除）  
+阶段 6： Concurrent Reset（并发重置）  
+其中初始标记、重新标记（最终标记）这两个步骤仍然需要“Stop The World”，初始标记仅仅只是标记一下GC Roots能直接关联到的对象，速度很快，图中初始标记这一步仅仅花销1ms，而并发标记就是从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，从图中可以看到，并发标记开始到最终标记开始期间，经历了并发标记以及并发预清理，一共消耗了188ms左右，但是这个过程不会停顿用户线程，用户线程可以和垃圾收集线程一起并发运行；而重新标记阶段则是为了修正并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间通常会比初始标记阶段稍长一些，但也远比并发标记阶段的时间短，从图中可以看到，从最终标记开始到并发清除开始这段时间，停顿了15ms左右，比并发标记和并发预清理期间耗时188ms少很多，最后是并发清除阶段，清理删除掉标记阶段判断的已经死亡的对象，由于不需要移动存活对象，所以这个阶段也是可以与用户线程同时并发的，从图中可以看到，并发清除和并发重置，一共耗时30ms左右。
+由于在整个过程中耗时最长的并发标记和并发清除阶段，垃圾收集器线程都可以与用户线程一起工作，所以从总体上说，CMS收集器的内存回收过程是与用户线程一起并发执行的。
 
 
 4、G1 GC
 
--Xms512m -Xmx512m的情况分析，命令如下： 
-java -XX:+UseG1GC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDateStamps GCLogAnalysis
+-Xms512m -Xmx512m的情况分析，命令如下:  
+java -XX:+UseG1GC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDateStamps GCLogAnalysis  
 
+运行结果：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/G1-GC-512.png)
 
 
 二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
