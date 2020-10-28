@@ -8,10 +8,8 @@
 
 -Xms128m -Xmx128m的情况分析，命令如下：
 
-java -XX:+UseSerialGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis
-
-运行结果：
-
+java -XX:+UseSerialGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis  
+运行结果：  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E4%B8%B2%E8%A1%8CGC-128.PNG)
 
 可以看到，当初始堆内存和最大堆内存都设置为128m的情况下，使用串行GC，会触发很多次FULL GC直到堆内存溢出，从图中可以看到，在执行第一次FULL GC前的一次Young GC时，
@@ -19,8 +17,8 @@ Young GC完成后，新生代内存空间已被撑满DefNew:39295K->39295K(39296
 
 -Xms256m -Xmx256m的情况分析，命令如下：
 
-java -XX:+UseSerialGC -Xms256m -Xmx256m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis
-运行结果：
+java -XX:+UseSerialGC -Xms256m -Xmx256m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis  
+运行结果：  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E4%B8%B2%E8%A1%8CGC-256.png)
 
 可以看到，当初始堆内存和最大堆内存都设置为256m的情况下，跟128m的情况类似，也是新生代已经无法正常进行垃圾清理，最后一次Young GC的情况：DefNew: 69952K->69952K(78656K)，Tenured: 174513K->174666K(174784K)，这时老年代也已经接近占满，触发了FULL GC，从图中可以看到，触发了很多次FULL GC，但是也无法正常回收内存，不管是老年代内存：Tenured: 174754K->174545K(174784K)，还是整个堆空间内存：253408K->244124K(253440K)，都持续处于满载状态，这个时候虽然没有发生OOM，但是实际上也已经无法通过FULL GC回收内存，跟OOM的情况也差不多了，这种情况再持续运行一段时间必然也会发生OOM
@@ -31,8 +29,9 @@ tenured generation   total 174784K, used 174545K
 the space 174784K,  99% used  
 
 -Xms512m -Xmx512m的情况分析，命令如下：
-java -XX:+UseSerialGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis
-
+java -XX:+UseSerialGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis  
+运行结果：  
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E4%B8%B2%E8%A1%8CGC-512.png)
 
 二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
