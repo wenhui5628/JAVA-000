@@ -66,12 +66,19 @@ java -XX:+UseParallelGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateSt
 java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 
 运行结果：
-
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/CMS-GC-128.png)
+从图中可以看出，当堆内存分配128m时，使用CMS GC也会发生内存溢出
 
 -Xms512m -Xmx512m的情况分析，命令如下：  
 java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 
+运行结果：
+
+
 4、G1 GC
+
+-Xms512m -Xmx512m的情况分析，命令如下： 
+java -XX:+UseG1GC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDateStamps GCLogAnalysis
 
 
 
