@@ -41,7 +41,7 @@ the space 349568K,  90% used
 java -XX:+UseSerialGC -Xms1g -Xmx1g -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis
 运行结果：  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E4%B8%B2%E8%A1%8CGC-1g.png)  
-从图中可以看到，当分配的堆内存提升到1G后，运行同样的程序发生Young GC的次数少了，但是我们可以看到，执行每次Young GC的使用时间反而比前面分配小内存的时候更多，也就是当分配的堆内存提高到1G，并不会带来垃圾回收性能的提升，改变的只是分配给老年代的空间增大了，从而使得老年代能存放的对象更多而已。
+从图中可以看到，当分配的堆内存提升到1G后，运行同样的程序发生Young GC的次数少了，但是我们可以看到，执行每次Young GC的使用时间反而比前面分配小内存的时候更多，基本上每次执行的时间都在45ms以上，而前面分配小内存的情况下，大部分时候都是10多毫秒或者20多毫秒，也就是当分配的堆内存提高到1G，并不会带来垃圾回收性能的提升，改变的只是分配给老年代的空间增大了，从而使得老年代能存放的对象更多而已。
 
 二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
