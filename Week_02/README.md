@@ -19,6 +19,8 @@ Young GC完成后，新生代内存空间已被撑满DefNew:39295K->39295K(39296
 -Xms256m -Xmx256m的情况分析，命令如下：
 
 java -XX:+UseSerialGC -Xms256m -Xmx256m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  GCLogAnalysis
+运行结果：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E4%B8%B2%E8%A1%8CGC-256.png)
 
 
 二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
