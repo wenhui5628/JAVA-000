@@ -47,7 +47,8 @@ java -XX:+UseSerialGC -Xms1g -Xmx1g -XX:+PrintGCDetails -XX:+PrintGCDateStamps  
 
 2、并行GC  
 -Xms128m -Xmx128m的情况分析，命令如下：  
-java -XX:+UseParallelGC -Xms128m -Xmx128m  -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis  
+java -XX:+UseParallelGC -Xms128m -Xmx128m  -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis 
+
 运行结果：  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-128.PNG)  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-128-2.PNG)  
@@ -55,9 +56,24 @@ java -XX:+UseParallelGC -Xms128m -Xmx128m  -XX:+PrintGCDetails -XX:+PrintGCDateS
 
 -Xms512m -Xmx512m的情况分析，命令如下：  
 java -XX:+UseParallelGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis  
+
 运行结果：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-512.png)
-并行GC在Young GC过程中耗时相对于串行GC低，在Full GC过程中耗时平均大约是六十多毫秒。整体看来Full GC的频率越来越高
+并行GC在Young GC过程中耗时相对于串行GC低，在Full GC过程中耗时平均大约是六十多毫秒，同等条件下，比串行GC执行Full GC耗时要高，整体看来Full GC的频率越来越高
+
+3、CMS GC
+-Xms128m -Xmx128m的情况分析，命令如下：
+java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+运行结果：
+
+
+-Xms512m -Xmx512m的情况分析，命令如下：  
+java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+4、G1 GC
+
+
 
 二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
