@@ -13,7 +13,7 @@ public class HttpRequestHeaderFilter extends ChannelInboundHandlerAdapter implem
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         FullHttpRequest fullHttpRequest = (FullHttpRequest) msg;
-        filter(fullHttpRequest, ctx);
-        ctx.fireChannelRead(fullHttpRequest);
+        filter(fullHttpRequest, ctx);   //往请求报文头中塞入nio字段
+        ctx.fireChannelRead(fullHttpRequest);//将数据流往后传递
     }
 }

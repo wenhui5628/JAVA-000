@@ -10,19 +10,19 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import java.util.List;
 
 public class HttpInboundInitializer extends ChannelInitializer<SocketChannel> {
-	
-	private List<String> proxyServer;
-	
-	public HttpInboundInitializer(List<String> proxyServer) {
-		this.proxyServer = proxyServer;
-	}
-	
-	@Override
-	public void initChannel(SocketChannel ch) {
-		ChannelPipeline channelPipeline = ch.pipeline();
-		channelPipeline.addLast(new HttpServerCodec());
-		channelPipeline.addLast(new HttpObjectAggregator(1024 * 1024));
-		channelPipeline.addLast(new HttpRequestHeaderFilter());
-		channelPipeline.addLast(new HttpInboundHandler(this.proxyServer));
-	}
+
+    private List<String> proxyServer;
+
+    public HttpInboundInitializer(List<String> proxyServer) {
+        this.proxyServer = proxyServer;
+    }
+
+    @Override
+    public void initChannel(SocketChannel ch) {
+        ChannelPipeline channelPipeline = ch.pipeline();
+        channelPipeline.addLast(new HttpServerCodec());
+        channelPipeline.addLast(new HttpObjectAggregator(1024 * 1024));
+        channelPipeline.addLast(new HttpRequestHeaderFilter());    //加入报文头过滤器
+        channelPipeline.addLast(new HttpInboundHandler(this.proxyServer));
+    }
 }
