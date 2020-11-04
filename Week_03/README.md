@@ -54,7 +54,7 @@
         1、进程是操作系统资源分配的基本单位，而线程是处理器任务调度和执行的基本单位。还存在资源开销、包含关系、内存分配、影响关系、执行过程等区别。
         2、同一进程的线程共享本进程的地址空间和资源，而进程之间的地址空间和资源相互独立。
         
-        线程创建过程：
+####   线程创建过程：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png)
         
 ### 2）Java多线程
@@ -149,17 +149,13 @@
        4. Excutors: 工具类
        
 ####   类图如下：
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9B%B8%E5%85%B3%E7%B1%BB%E5%9B%BE.png)
-       
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9B%B8%E5%85%B3%E7%B1%BB%E5%9B%BE.png)       
 ####   Executor – 执行者
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Executor.png)
-        
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Executor.png)        
 ####   ExecutorService
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ExecutorService.png)
-
 ####   ThreadFactory
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadFactory.png)
-        
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadFactory.png)        
 ####   ThreadPoolExecutor 提交任务逻辑:
         1. 判断 corePoolSize 【创建】
         2. 加入 workQueue
