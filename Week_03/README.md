@@ -151,11 +151,11 @@
 ####   类图如下：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9B%B8%E5%85%B3%E7%B1%BB%E5%9B%BE.png)       
 ####   Executor – 执行者
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Executor.png)        
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Executor2.png)        
 ####   ExecutorService
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ExecutorService.png)
 ####   ThreadFactory
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadFactory.png)        
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadFactory2.png)        
 ####   ThreadPoolExecutor 提交任务逻辑:
         1. 判断 corePoolSize 【创建】
         2. 加入 workQueue
