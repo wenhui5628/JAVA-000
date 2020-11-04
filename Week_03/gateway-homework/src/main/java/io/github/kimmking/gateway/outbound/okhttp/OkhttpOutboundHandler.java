@@ -47,7 +47,7 @@ public class OkhttpOutboundHandler {
     }
 
     private void fetchGet(final FullHttpRequest inbound, final ChannelHandlerContext ctx, final String url) {
-//        //获取所有请求头属性
+        //获取所有请求头属性
         HttpHeaders header = inbound.headers();//获取请求头对象
         List<Map.Entry<String, String>> entriesList = header.entries(); //将包含的请求信息赋值到list中
 
