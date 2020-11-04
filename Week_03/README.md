@@ -240,7 +240,7 @@
             ctx.fireChannelRead(fullHttpRequest);
         }
         
-        2、在类HttpInboundInitializer的initChannel方法中加入过滤器HttpRequestHeaderFilter，如下：
+####    2、在类HttpInboundInitializer的initChannel方法中加入过滤器HttpRequestHeaderFilter，如下：
         @Override
         public void initChannel(SocketChannel ch) {
             ChannelPipeline channelPipeline = ch.pipeline();
