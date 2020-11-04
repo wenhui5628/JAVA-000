@@ -1,5 +1,6 @@
 package io.github.kimmking.gateway.inbound;
 
+import io.github.kimmking.gateway.filter.HttpRequestHeaderFilter;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -18,9 +19,10 @@ public class HttpInboundInitializer extends ChannelInitializer<SocketChannel> {
 	
 	@Override
 	public void initChannel(SocketChannel ch) {
-		ChannelPipeline p = ch.pipeline();
-		p.addLast(new HttpServerCodec());
-		p.addLast(new HttpObjectAggregator(1024 * 1024));
-		p.addLast(new HttpInboundHandler(this.proxyServer));
+		ChannelPipeline channelPipeline = ch.pipeline();
+		channelPipeline.addLast(new HttpServerCodec());
+		channelPipeline.addLast(new HttpObjectAggregator(1024 * 1024));
+		channelPipeline.addLast(new HttpRequestHeaderFilter());
+		channelPipeline.addLast(new HttpInboundHandler(this.proxyServer));
 	}
 }

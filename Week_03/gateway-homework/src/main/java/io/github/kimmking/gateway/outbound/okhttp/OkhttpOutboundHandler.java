@@ -41,18 +41,15 @@ public class OkhttpOutboundHandler {
     public void handle(final FullHttpRequest fullRequest, final ChannelHandlerContext ctx) {
         String proxyServer = new HttpEndpointRouterImpl().route(endpoints);
         String backendUrl = proxyServer.endsWith("/") ? proxyServer.substring(0, proxyServer.length() - 1) : proxyServer;
-        System.out.println("===backendUrl:" + backendUrl);
         final String url = backendUrl + fullRequest.uri();
         proxyService.submit(() -> fetchGet(fullRequest, ctx, url));
     }
 
     private void fetchGet(final FullHttpRequest inbound, final ChannelHandlerContext ctx, final String url) {
         final Request request = new Request.Builder().url(url).build();
-        System.out.println("===请求的URL为：" + url);
         try (Response response = client.newCall(request).execute()) {
             String responseBody = response.body().string();
             log.info("响应内容为：" + responseBody);
-//            System.out.println("响应内容为："+responseBody);
             FullHttpResponse fullHttpResponse = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(responseBody.getBytes("UTF-8")));
             //获取所有请求头属性
             HttpHeaders header = inbound.headers();//获取请求头对象
