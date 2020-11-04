@@ -1,5 +1,5 @@
 
-作业要求：
+本周作业完成情况如下：
 
 
 一、使用GCLogAnalysis.java 自己演练一遍串行/并行/CMS/G1的案例。
@@ -47,7 +47,8 @@ java -XX:+UseSerialGC -Xms1g -Xmx1g -XX:+PrintGCDetails -XX:+PrintGCDateStamps  
 
 2、并行GC  
 -Xms128m -Xmx128m的情况分析，命令如下：  
-java -XX:+UseParallelGC -Xms128m -Xmx128m  -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis  
+java -XX:+UseParallelGC -Xms128m -Xmx128m  -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis 
+
 运行结果：  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-128.PNG)  
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-128-2.PNG)  
@@ -55,11 +56,220 @@ java -XX:+UseParallelGC -Xms128m -Xmx128m  -XX:+PrintGCDetails -XX:+PrintGCDateS
 
 -Xms512m -Xmx512m的情况分析，命令如下：  
 java -XX:+UseParallelGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis  
+
 运行结果：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/%E5%B9%B6%E8%A1%8CGC-512.png)
-并行GC在Young GC过程中耗时相对于串行GC低，在Full GC过程中耗时平均大约是六十多毫秒。整体看来Full GC的频率越来越高
+并行GC在Young GC过程中耗时相对于串行GC低，在Full GC过程中耗时平均大约是六十多毫秒，同等条件下，比串行GC执行Full GC耗时要高，整体看来Full GC的频率越来越高
 
-二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
+3、CMS GC  
+-Xms128m -Xmx128m的情况分析，命令如下：  
+java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+运行结果：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/CMS-GC-128.png)
+从图中可以看出，当堆内存分配128m时，使用CMS GC也会发生内存溢出
+
+-Xms512m -Xmx512m的情况分析，命令如下：  
+java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+运行结果：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/CMS-GC-512.png)  
+CMS GC收集器是一种以获取最短回收停顿时间为目标的收集器，是基于标记-清除算法实现的，运作过程相对于前面几种收集器来说要更复杂一些，
+从图中可以看到，CMS GC的垃圾回收周期会经过以下几个阶段：  
+阶段 1：Initial Mark（初始标记）  
+阶段 2：Concurrent Mark（并发标记）  
+阶段 3：Concurrent Preclean（并发预清理）  
+阶段 4： Final Remark（最终标记）  
+阶段 5： Concurrent Sweep（并发清除）  
+阶段 6： Concurrent Reset（并发重置）  
+其中初始标记、重新标记（最终标记）这两个步骤仍然需要“Stop The World”，初始标记仅仅只是标记一下GC Roots能直接关联到的对象，速度很快，图中初始标记这一步仅仅花销1ms，而并发标记就是从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，从图中可以看到，并发标记开始到最终标记开始期间，经历了并发标记以及并发预清理，一共消耗了188ms左右，但是这个过程不会停顿用户线程，用户线程可以和垃圾收集线程一起并发运行；而重新标记阶段则是为了修正并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间通常会比初始标记阶段稍长一些，但也远比并发标记阶段的时间短，从图中可以看到，从最终标记开始到并发清除开始这段时间，停顿了15ms左右，比并发标记和并发预清理期间耗时188ms少很多，最后是并发清除阶段，清理删除掉标记阶段判断的已经死亡的对象，由于不需要移动存活对象，所以这个阶段也是可以与用户线程同时并发的，从图中可以看到，并发清除和并发重置，一共耗时30ms左右。
+由于在整个过程中耗时最长的并发标记和并发清除阶段，垃圾收集器线程都可以与用户线程一起工作，所以从总体上说，CMS收集器的内存回收过程是与用户线程一起并发执行的。
+
+
+4、G1 GC
+
+-Xms512m -Xmx512m的情况分析，命令如下:  
+java -XX:+UseG1GC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDateStamps GCLogAnalysis  
+
+运行结果：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_02/img/G1-GC-512.png)  
+从图中可以看到，G1 GC的垃圾回收周期会经过以下几个阶段：  
+Evacuation Pause: (young)（纯年轻代模式转移暂停）  
+Initial Mark（初始标记）  
+Root Region Scan（Root区扫描）   
+Concurrent Mark（并发标记）  
+Remark（再次标记）  
+Cleanup（清理）  
+Evacuation Pause (mixed)（转移暂停: 混合模式）  
+Full GC (Allocation Failure)  
+可以看到，G1收集器的运作过程跟CMS收集器的运作过程很相似，都有初始标记，并发标记，再次标记，清理等阶段，不同的是G1收集器在这几个阶段表现得更加优秀，从图中可以看到，CMS收集器中耗时最长的并发标记和并发清除，在G1收集器中的耗时远远低于CMS收集器中的耗时，G1收集器中还有Evacuation Pause: (young)和Evacuation Pause (mixed)这两个特有的阶段，这里还有疑问，需要问一下助教老师，这两个阶段主要做了什么事情？
+
+最后总结一下，并行GC和串行GC相比，由于采用了多线程并行收集，在垃圾回收的执行时间上明显快不少，同时，通过实验可以看到，单纯增加堆内存大小不会获得预期的线性增长，当增加到1G时，垃圾回收器处理的性能提升会趋于平缓甚至有所下降，并行GC还有一个特点是吞吐量比较高，而GC收集器和G1收集器跟串行和并行GC相比，最大的特点是在并发标记和并发清除阶段，垃圾收集器线程都可以与用户线程一起工作，从而可以减少系统停顿时间，给用户带来更好的交互体验。
+
+二、使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。  
+
+使用以下命令进行压测  
+sb -u http://localhost:8088/api/hello -c 20 -N 30  
+
+测试结果如下：  
+1、使用默认并行GC
+
+（1）java -jar -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar
+
+	RPS: 760.1 (requests/second)
+	Max: 394ms
+	Min: 0ms
+	Avg: 0.9ms
+	
+（2）java -jar -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar
+
+	RPS: 742.4 (requests/second)
+	Max: 4419ms
+	Min: 0ms
+	Avg: 1.3ms
+	
+（3）java -jar -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar
+
+	RPS: 678.1 (requests/second)
+	Max: 4938ms
+	Min: 0ms
+	Avg: 2.6ms
+
+
+（4）java -jar -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar
+
+	RPS: 502.8 (requests/second)
+	Max: 3494ms
+	Min: 0ms
+	Avg: 2.9ms
+
+
+2、使用串行GC  
+
+（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar 
+
+	RPS: 715.9 (requests/second)
+	Max: 356ms
+	Min: 0ms
+	Avg: 0.9ms
+
+（2）java -jar -XX:+UseSerialGC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar 
+
+	RPS: 753.7 (requests/second)
+	Max: 5314ms
+	Min: 0ms
+	Avg: 1ms
+
+（3）java -jar -XX:+UseSerialGC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar 
+
+	RPS: 697.7 (requests/second)
+	Max: 352ms
+	Min: 0ms
+	Avg: 1ms
+
+
+（4）java -jar -XX:+UseSerialGC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar 
+
+	RPS: 620.6 (requests/second)
+	Max: 4046ms
+	Min: 0ms
+	Avg: 2ms
+
+3、使用CMS  
+
+（1）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+	RPS: 618.7 (requests/second)
+	Max: 5143ms
+	Min: 0ms
+	Avg: 2.2ms
+
+（2）java -jar -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+	RPS: 634.5 (requests/second)
+	Max: 465ms
+	Min: 0ms
+	Avg: 1.6ms
+
+（3）java -jar -XX:+UseConcMarkSweepGC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar  
+
+	RPS: 618 (requests/second)
+	Max: 5498ms
+	Min: 0ms
+	Avg: 2.3ms
+
+（4）java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+	RPS: 620.4 (requests/second)
+	Max: 5205ms
+	Min: 0ms
+	Avg: 2ms
+
+3、使用G1  
+
+（1）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+	RPS: 729 (requests/second)
+	Max: 369ms
+	Min: 0ms
+	Avg: 1ms
+
+（2）java -jar -XX:+UseG1GC -Xms512m -Xmx512m .\gateway-server-0.0.1-SNAPSHOT.jar  
+
+	RPS: 693.1 (requests/second)
+	Max: 3703ms
+	Min: 0ms
+	Avg: 1.5ms
+
+（3）java -jar -XX:+UseG1GC -Xms1g -Xmx1g .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+	RPS: 751.9 (requests/second)
+	Max: 3642ms
+	Min: 0ms
+	Avg: 1.9ms
+
+（4）java -jar -XX:+UseG1GC -Xms4g -Xmx4g .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+	RPS: 742.8 (requests/second)
+	Max: 4440ms
+	Min: 0ms
+	Avg: 1.5ms
+    
+调整垃圾回收算法对20个并发请求数量级来说，压测的RPS基本都差不多  
+    
+调整并发请求数为100： 
+ sb -u http://localhost:8088/api/hello -c 100 -N 30 
+ 
+（1）java -jar -XX:+UseSerialGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+    RPS: 539.4 (requests/second)
+    Max: 545ms
+    Min: 0ms
+    Avg: 39.1ms
+
+（2）java -jar -XX:+UseParallelGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+    RPS: 601.3 (requests/second)
+    Max: 4364ms
+    Min: 0ms
+    Avg: 29ms
+
+（3）java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar  
+
+    RPS: 658.6 (requests/second)
+    Max: 484ms
+    Min: 0ms
+    Avg: 22.5ms
+
+（4）java -jar -XX:+UseG1GC -Xms128m -Xmx128m .\gateway-server-0.0.1-SNAPSHOT.jar   
+
+    RPS: 574.6 (requests/second)
+    Max: 4534ms
+    Min: 0ms
+    Avg: 35.7ms
+    
+增大并发数到100相较于20的并发数会导致RPS降低，同时导致请求响应时间增加，而垃圾回收算法对其影响不大，相对来说堆空间较大时，G1回收算法RPS最高，堆空间较小时，CMS算法最优
+
 
 
 三、写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801 ，代码提交到 Github。
