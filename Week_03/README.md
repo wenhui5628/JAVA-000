@@ -55,7 +55,7 @@
         2、同一进程的线程共享本进程的地址空间和资源，而进程之间的地址空间和资源相互独立。
         
         线程创建过程：
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png)
         
 ### 2）Java多线程
 ####   创建线程的两种方式：
@@ -63,13 +63,13 @@
         2、继承Thread
         
 ####    线程状态：
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png)
         
 ####    Thread 类重要属性和方法
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Thread%E9%87%8D%E8%A6%81%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Thread%E9%87%8D%E8%A6%81%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95.png)
         
 ####    wait & notify的区别
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/wait%26notify.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/wait%26notify.png)
         
 ####    Thread 的状态改变操作
         1. Thread.sleep(long millis)，一定是当前线程调用此方法，当前线程进入 TIMED_WAITING 状态，但不释放对象锁，millis 后线程自动苏醒进入就绪状态。作用：给其它线程执行机会的最佳方式。
@@ -86,8 +86,7 @@
         分段处理，每个片段检查一下状态，是不是要终止。
         
 ####    Thread 状态图如下：
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Thread%E7%8A%B6%E6%80%81%E5%9B%BE.png)
-        
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Thread%E7%8A%B6%E6%80%81%E5%9B%BE.png)   
         
         
 ### 3）线程安全
@@ -97,14 +96,16 @@
         不进行恰当的控制，会导致线程安全问题
         
 ####    并发相关的性质
-#####   原子性：原子操作，注意跟事务 ACID 里原子性的区别与联系
+#####   原子性：
+        原子操作，注意跟事务 ACID 里原子性的区别与联系
         对基本数据类型的变量的读取和赋值操作是原子性操作，即这些操作是不可被中断的，要么执行，要么不执行。
         可见性：对于可见性，Java 提供了 volatile 关键字来保证可见性。
         当一个共享变量被 volatile 修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。
         另外，通过 synchronized 和 Lock 也能够保证可见性，synchronized 和 Lock 能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。
 #####   注意：volatile 并不能保证原子性。
         
-#####   有序性：Java 允许编译器和处理器对指令进行重排序，但是重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。可以通过 volatile 关键字来保证一定的“有序      
+#####   有序性：
+        Java 允许编译器和处理器对指令进行重排序，但是重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。可以通过 volatile 关键字来保证一定的“有序      
         性”（synchronized 和 Lock也可以）。
         
 #####   happens-before 原则（先行发生原则）：
@@ -135,7 +136,7 @@
         
  #####  final关键字
         final关键字的用法如下：
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/final.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/final.png)
         
         final 声明的引用类型与原生类型在处理时有什么区别?
         Java 里的常量替换。写代码最大化用 final 是个好习惯。
@@ -148,16 +149,16 @@
        4. Excutors: 工具类
        
 ####   类图如下：
-       ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9B%B8%E5%85%B3%E7%B1%BB%E5%9B%BE.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9B%B8%E5%85%B3%E7%B1%BB%E5%9B%BE.png)
        
 ####   Executor – 执行者
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Executor.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/Executor.png)
         
 ####   ExecutorService
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ExecutorService.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ExecutorService.png)
 
 ####   ThreadFactory
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadFactory.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadFactory.png)
         
 ####   ThreadPoolExecutor 提交任务逻辑:
         1. 判断 corePoolSize 【创建】
@@ -166,7 +167,7 @@
         4. 执行拒绝策略处理器
         
 ####   ThreadPoolExecutor属性和方法
-        ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadPoolExecutor.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/ThreadPoolExecutor.png)
         
 ####   线程池参数
 #####  缓冲队列
