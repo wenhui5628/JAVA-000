@@ -211,7 +211,7 @@
 #####  1、根据老师的HttpOutboundHandler改造一个OkhttpOutboundHandler类，并将上周完成的客户端代码融合到这个类中，具体代码见工程中的这个类
        io.github.kimmking.gateway.outbound.okhttp.OkhttpOutboundHandler
         
-#####  2、修改HttpInboundHandler类，修改代码如下：
+#####  2、修改HttpInboundHandler类，这里由于第三步路由的目标访问机器有多台，故这里构造OkhttpOutboundHandler对象时传入集合类型的endpoints，指定所有目标访问机器,修改代码如下：
        private final List<String> endpoints;
        private OkhttpOutboundHandler handler;
 
@@ -221,14 +221,13 @@
             handler = new OkhttpOutboundHandler(this.endpoints);
        }
        
-       这里由于第三步路由的目标访问机器有多台，故这里构造OkhttpOutboundHandler对象时传入集合类型的endpoints，指定所有目标访问机器   
+        
            
 ### 2)实现过滤器  
 ####   作业二实现的效果如下图所示：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BD%91%E5%85%B32.png)
 ####   涉及修改的代码如下：
-####   1、新增HttpRequestHeaderFilter类，继承ChannelInboundHandlerAdapter并实现HttpRequestFilter接口，在filter方法中往请求报文头塞入nio字段，并重写channelRead方法，
-####   在channelRead方法中先调用filter方法给请求报文头赋值，再调用ChannelHandlerContext的fireChannelRead方法讲数据流往后传递，代码如下：
+####   1、新增HttpRequestHeaderFilter类，继承ChannelInboundHandlerAdapter并实现HttpRequestFilter接口，在filter方法中往请求报文头塞入nio字段，并重写channelRead方法，在channelRead方法中先调用filter方法给请求报文头赋值，再调用ChannelHandlerContext的fireChannelRead方法讲数据流往后传递，代码如下：
         @Override
         public void filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {
             fullRequest.headers().set("nio","wuwenhui");
