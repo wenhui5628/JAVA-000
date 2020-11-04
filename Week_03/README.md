@@ -203,7 +203,86 @@
 # 二、作业完成情况  
 
 ## 1、按今天的课程要求，实现一个网关，基础代码可以 fork：https://github.com/kimmking/JavaCourseCodes02nio/nio02 文件夹下  
+### 1）整合上次作业的 httpclient/okhttp  
+####  作业一整合后的处理流程图如下：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BD%91%E5%85%B31.png)
 
-### 1)整合你上次作业的 httpclient/okhttp  
+####   涉及修改的代码如下：
+#####  1、根据老师的HttpOutboundHandler改造一个OkhttpOutboundHandler类，并将上周完成的客户端代码融合到这个类中，具体代码见工程中的这个类
+       io.github.kimmking.gateway.outbound.okhttp.OkhttpOutboundHandler
+        
+#####  2、修改HttpInboundHandler类，这里由于第三步路由的目标访问机器有多台，故这里构造OkhttpOutboundHandler对象时传入集合类型的endpoints，指定所有目标访问机器,修改代码如下：
+       private final List<String> endpoints;
+       private OkhttpOutboundHandler handler;
+
+       public HttpInboundHandler(List<String> proxyServer) {
+            this.endpoints = proxyServer;
+            //整合OkHttp客户端到网关
+            handler = new OkhttpOutboundHandler(this.endpoints);
+       }
+       
+        
+           
 ### 2)实现过滤器  
+####   作业二实现的效果如下图所示：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BD%91%E5%85%B32.png)
+####   涉及修改的代码如下：
+####   1、新增HttpRequestHeaderFilter类，继承ChannelInboundHandlerAdapter并实现HttpRequestFilter接口，在filter方法中往请求报文头塞入nio字段，并重写channelRead方法，在channelRead方法中先调用filter方法给请求报文头赋值，再调用ChannelHandlerContext的fireChannelRead方法讲数据流往后传递，代码如下：
+        @Override
+        public void filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {
+            fullRequest.headers().set("nio","wuwenhui");
+        }
+
+        @Override
+        public void channelRead(ChannelHandlerContext ctx, Object msg) {
+            FullHttpRequest fullHttpRequest = (FullHttpRequest) msg;
+            filter(fullHttpRequest, ctx);
+            ctx.fireChannelRead(fullHttpRequest);
+        }
+        
+####    2、在类HttpInboundInitializer的initChannel方法中加入过滤器HttpRequestHeaderFilter，如下：
+        @Override
+        public void initChannel(SocketChannel ch) {
+            ChannelPipeline channelPipeline = ch.pipeline();
+            channelPipeline.addLast(new HttpServerCodec());
+            channelPipeline.addLast(new HttpObjectAggregator(1024 * 1024));
+            channelPipeline.addLast(new HttpRequestHeaderFilter());
+            channelPipeline.addLast(new HttpInboundHandler(this.proxyServer));
+        }
+
 ### 3)实现路由  
+####   作业三实现的效果如下图所示：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_03/img/%E7%BD%91%E5%85%B33.png)
+####   涉及修改的代码如下：
+####   1、修改NettyServerApplication类，初始化目标服务机器列表，修改代码如下：
+        final static List<String> endpoints = new ArrayList<>();
+
+        /***
+         * 初始化时生成一个目标服务器的IP列表，用于端口和IP之间的映射关系
+         */
+        static{
+            endpoints.add("http://localhost:8088");
+            endpoints.add("http://localhost:8801");
+            endpoints.add("http://localhost:8802");
+            endpoints.add("http://localhost:8803");
+        }
+        
+        HttpInboundServer server = new HttpInboundServer(port, endpoints);
+        
+####    2、新增HttpEndpointRouterImpl类，实现HttpEndpointRouter接口，使用生成随机数的方法随机将请求转到目标机器，如下：
+        public String route(List<String> endpoints) {
+            int proxyServerKey = (int)(Math.random()*4);
+            System.out.println("生成随机数:"+proxyServerKey);
+            return endpoints.get(proxyServerKey);
+        }
+        
+####    3、在OkhttpOutboundHandler类的handle方法中调用HttpEndpointRouterImpl的route方法，获取指定的目标服务器地址，如下：
+        public void handle(final FullHttpRequest fullRequest, final ChannelHandlerContext ctx) {
+            String proxyServer = new HttpEndpointRouterImpl().route(endpoints);
+            String backendUrl = proxyServer.endsWith("/") ? proxyServer.substring(0, proxyServer.length() - 1) : proxyServer;
+            final String url = backendUrl + fullRequest.uri();
+            proxyService.submit(() -> fetchGet(fullRequest, ctx, url));
+        }
+        
+        
+        
