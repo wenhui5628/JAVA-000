@@ -249,6 +249,17 @@
             channelPipeline.addLast(new HttpRequestHeaderFilter());
             channelPipeline.addLast(new HttpInboundHandler(this.proxyServer));
         }
+        
+####    3、修改OkhttpOutboundHandler，将通过过滤器FullHttpRequest对象获得的请求头信息赋值给OkHttpClient的请求头，最终实现发送到后台服务器的请求报文头包含nio字段，代码如下：
+        //获取所有请求头属性
+        HttpHeaders header = inbound.headers();//获取请求头对象
+        List<Map.Entry<String, String>> entriesList = header.entries(); //将包含的请求信息赋值到list中
+
+        //将所有请求头信息赋值给OkHttpClient客户端的请求头
+        HashMap<String, String> requestHeadMap = new HashMap<>();
+        entriesList.forEach(headersMap -> requestHeadMap.put(headersMap.getKey(),headersMap.getValue()));
+        Request.Builder builder = new Request.Builder();
+        requestHeadMap.forEach(builder::header);
 
 ### 3)实现路由  
 ####   作业三实现的效果如下图所示：
