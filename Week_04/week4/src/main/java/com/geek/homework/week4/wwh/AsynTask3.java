@@ -1,0 +1,33 @@
+package com.geek.homework.week4.wwh;
+
+import com.geek.homework.week4.wwh.task.Task;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+/**
+ * 本周作业：（必做）思考有多少种方式，在main函数启动一个新线程或线程池，
+ * 异步运行一个方法，拿到这个方法的返回值后，退出主线程
+ * <p>
+ * 方法一：使用Future<Integer>和Executors类的newCachedThreadPool方法结合调起一个异步线程
+ */
+public class AsynTask3 {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        System.out.println("主线程" + Thread.currentThread().getName() + ":begin!");
+
+        long start=System.currentTimeMillis();
+        //1、通过Executors工具类的newCachedThreadPool方法创建一个可缓存的线程池
+        ExecutorService executor = Executors.newCachedThreadPool();
+
+        //2、通过ExecutorService的submit方法调用Task对象
+        Future<Integer> result1 = executor.submit(new Task());
+        System.out.println("异步计算结果为："+result1.get());
+        System.out.println("使用时间："+ (System.currentTimeMillis()-start) + " ms");
+        executor.shutdown();
+
+        System.out.println("主线程" + Thread.currentThread().getName() + ":end!");
+    }
+
+}
