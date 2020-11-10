@@ -8,7 +8,7 @@ import java.util.concurrent.*;
  * 本周作业：（必做）思考有多少种方式，在main函数启动一个新线程或线程池，
  * 异步运行一个方法，拿到这个方法的返回值后，退出主线程
  * <p>
- * 方法一：使用Future<Integer>和ThreadFactory结合调起一个异步线程
+ * 使用Future<Integer>和ThreadFactory结合调起一个异步线程
  */
 public class AsynTask4 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
