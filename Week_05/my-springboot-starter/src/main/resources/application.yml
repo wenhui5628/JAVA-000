@@ -1,0 +1,6 @@
+my:
+  studentId: 123456
+  studentName: wuwenhui
+spring:
+  main:
+    web-environment: false

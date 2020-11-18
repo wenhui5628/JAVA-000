@@ -1,0 +1,12 @@
+{
+  "hints":[],
+  "groups":[],
+  "properties": [
+    {
+      "sourceType": "com.geek.homework.spring.demo.configuration.MyProperties",
+      "name": "my.studentName",
+      "description": "姓名",
+      "type": "java.lang.String"
+    }
+  ]
+}
