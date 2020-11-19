@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8efc3d09-6a22-43f6-9a34-c7e72bd87bae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../my-springboot-starter/src/main/resources/META-INF/spring.factories" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_03/gateway-homework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_03/gateway-homework/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/FirstAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/FirstAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-agent/target/aop-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/target/aop-demo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-agent/target/original-aop-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/target/original-aop-demo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-springboot-starter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../my-springboot-starter/src/main/resources/META-INF/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-springboot-starter/src/main/resources/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../my-springboot-starter/src/main/resources/META-INF/spring-configuration-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-bean-create/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-bean-create/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
@@ -112,7 +110,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-15" />
     <option name="width" value="1473" />
     <option name="height" value="1107" />
@@ -188,7 +186,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605762995325" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605767799002" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -239,15 +237,15 @@
       <workItem from="1605491423282" duration="5428000" />
       <workItem from="1605535726633" duration="1196000" />
       <workItem from="1605710071780" duration="22000" />
-      <workItem from="1605762430412" duration="565000" />
+      <workItem from="1605762430412" duration="1179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9829000" />
+    <option name="totallyTimeSpent" value="10443000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -266,7 +264,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.54626334" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.53736657" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
