@@ -21,7 +21,5 @@ class Config {
     public TeacherConfig teacherConfig() {
         return new TeacherConfig(studentConfig());  //创建并返回Bean的实例，因为写了构造器，所以可以直接构造器注入依赖。可直接调用本类中的其它方法创建依赖的实例，注入。
     }
-
-
 }
 
