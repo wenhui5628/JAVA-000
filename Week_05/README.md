@@ -420,9 +420,7 @@
                           System.out.println("===执行成功，影响记录数为:"+statement.executeUpdate(insertSql));
                       }
 ####  2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。 
-##### 使用事务改进后的代码见jdbc工程的JdbcWithTransaction.java，主要是使用connection.setAutoCommit(false);这个方法先将自动提交改为false，
-##### 这里执行了两步操作，两次update之间如果抛出了异常，则在catch代码块中调用connection.rollback();对本次涉及的所有数据库操作进行回滚，
-##### 如整个过程执行正常，则在最后执行connection.commit();将所有数据库操作提交，主要代码如下:
+##### 使用事务改进后的代码见jdbc工程的JdbcWithTransaction.java，主要是使用connection.setAutoCommit(false);这个方法先将自动提交改为false，这里执行了两步操作，两次update之间如果抛出了异常，则在catch代码块中调用connection.rollback();对本次涉及的所有数据库操作进行回滚，如整个过程执行正常，则在最后执行connection.commit();将所有数据库操作提交，主要代码如下:
                       Class.forName("com.mysql.jdbc.Driver");
                       String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
                       connection = DriverManager.getConnection(url, "root", "123456");
@@ -448,9 +446,7 @@
                       throw new RuntimeException(e);
                   }
 
-##### 使用PrepareStatement和批处理改进后的代码见jdbc工程的JdbcPrepareStatement.java，使用PrepareStatement解决的问题主要是将Statement传参需要拼接sql的问题，
-##### 改为PrepareStatement后，使用?占位符的方式能解决sql拼接繁琐的问题，并解决sql注入问题，批处理的实现主要是调用preparedStatement.addBatch();将每条要执行的sql添加到批次中，
-##### 最后调用preparedStatement.executeBatch();批量提交，主要代码如下：
+##### 使用PrepareStatement和批处理改进后的代码见jdbc工程的JdbcPrepareStatement.java，使用PrepareStatement解决的问题主要是将Statement传参需要拼接sql的问题，改为PrepareStatement后，使用?占位符的方式能解决sql拼接繁琐的问题，并解决sql注入问题，批处理的实现主要是调用preparedStatement.addBatch();将每条要执行的sql添加到批次中，最后调preparedStatement.executeBatch();批量提交，主要代码如下：
                   Connection connection = null;
                   PreparedStatement preparedStatement = null;
                   try {
@@ -479,8 +475,7 @@
                   }
         
 ####  3）配置 Hikari 连接池，改进上述操作。提交代码到 Github。 
-##### 见jdbc工程的JdbcWithHikari.java,同时需要定义一个配置文件用来声明连接池需要用的数据库连接信息，见hikari.properties，原来使用jdbc自带的DriverManager获取连接的操作改为
-##### 使用Hikari的数据库连接池HikariDataSource获取数据库连接，主要代码如下：
+##### 见jdbc工程的JdbcWithHikari.java,同时需要定义一个配置文件用来声明连接池需要用的数据库连接信息，见hikari.properties，原来使用jdbc自带的DriverManager获取连接的操作改为使用Hikari的数据库连接池HikariDataSource获取数据库连接，主要代码如下：
                   Connection connection = null;
                   PreparedStatement preparedStatement = null;
                   try (InputStream is = JdbcWithHikari.class.getClassLoader().getResourceAsStream("hikari.properties")) {
