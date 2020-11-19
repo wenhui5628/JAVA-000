@@ -114,7 +114,79 @@
        
          
 #### （超级挑战）尝试使用ByteBuddy与Instrument实现一个简单JavaAgent实现无侵入下的 AOP；         
-      见java-agent和java-agent-test
+##### 见java-agent和java-agent-test
+##### 思路：我理解的无侵入，是指目前已经有在运行的代码，在不改动原代码和配置的情况下，使用AOP对原代码做一个增强，下面分别用了ByteBuddy和Instrument实现了一下这个问题，如下：
+##### 使用ByteBuddy，
+##### 1.先准备一个业务类Service.java，如下：
+          package com.spring.aop.demo.bytebuddy;
+
+          public class Service {
+              @Log
+              public int foo(int value) {
+                  System.out.println("foo: " + value);
+                  return value;
+              }
+
+              public int bar(int value) {
+                  System.out.println("bar: " + value);
+                  return value;
+              }
+          }
+
+##### 2、准备一个对业务类增强的一个切面类LoggerAdvisor.java，如下：
+          package com.spring.aop.demo.bytebuddy;
+
+          import net.bytebuddy.asm.Advice;
+
+          import java.lang.reflect.Method;
+          import java.util.Arrays;
+
+          public class LoggerAdvisor {
+              @Advice.OnMethodEnter
+              public static void onMethodEnter(@Advice.Origin Method method, @Advice.AllArguments Object[] arguments) {
+                  if (method.getAnnotation(Log.class) != null) {
+                      System.out.println("Enter " + method.getName() + " with arguments: " + Arrays.toString(arguments));
+                  }
+              }
+
+              @Advice.OnMethodExit
+              public static void onMethodExit(@Advice.Origin Method method, @Advice.AllArguments Object[] arguments, @Advice.Return Object ret) {
+                  if (method.getAnnotation(Log.class) != null) {
+                      System.out.println("Exit " + method.getName() + " with arguments: " + Arrays.toString(arguments) + " return: " + ret);
+                  }
+              }
+          }
+
+##### 3、运行的入口程序如下：
+          package com.spring.aop.demo.bytebuddy;
+
+          import net.bytebuddy.ByteBuddy;
+          import net.bytebuddy.asm.Advice;
+          import net.bytebuddy.matcher.ElementMatchers;
+
+          public class Test {
+              public static void main(String[] args) throws Exception {
+                  Service service = new ByteBuddy()
+                          .subclass(Service.class)    //表示对Service类做增强
+                          .method(ElementMatchers.any())//对任意方法做增强
+                          .intercept(Advice.to(LoggerAdvisor.class))//表示使用LoggerAdvisor这个类对服务类做增强
+                          .make()
+                          .load(Service.class.getClassLoader())
+                          .getLoaded()
+                          .newInstance();
+                  service.bar(123);
+                  service.foo(456);
+              }
+          }
+          
+ ##### 4、运行结果如下，Enter和Exit的打印信息就是对服务类做的增强
+          bar: 123
+          Enter foo with arguments: [456]
+          foo: 456
+          Exit foo with arguments: [456] return: 456
+          
+      
+      
          
 #### （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。        
       见my-springboot-starter工程
