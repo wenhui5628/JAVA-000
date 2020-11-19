@@ -54,6 +54,7 @@
              <bean id="teacher4" class="com.geek.homework.week5.bean.xml.Teacher" autowire="default"/>
       
 ####  2、Annotation
+##### 配置文件中的配置如下：
             <!--
               使用注解的方式注入bean，基于注解的装配都需要用<context:annotation-config />开启注解装配，
               这句代码是告诉Spring容器，下面的这些bean使用的是注解装配
@@ -77,6 +78,40 @@
            -->
           <context:component-scan base-package="com.geek.homework.week5.bean.annotation.service"/>
           <bean id="student3" class="com.geek.homework.week5.bean.annotation.service.Student"/>
+
+#####  java类中使用注解@Autowired和@Qualifier的代码如下：
+          public class Teacher2 {
+              /***
+               * 在依赖的Bean实例上添加@Qualifier，@Qualifier不能单独用，还需要添加@Autowired。
+               * @Qualifier是byName方式的自动装配，需要用value指定依赖Bean的id/name，
+               * Spring容器根据这个value找到id/name为vBean注入
+               */
+              @Autowired
+          //    @Qualifier(value="student2")
+              @Qualifier("student2")
+              private Student student;
+
+              public void say() {
+                  System.out.println(student.getName() + "，叫家长来一下。");
+              }
+
+          }
+   
+#####  java类中使用注解@Resource的代码如下：
+             public class Teacher3 {
+              /***
+               * 如果找不到name/id为指定值的Bean，或缺省name直接写@Resource，
+               * 则以默认的getName方式：写在字段上默认name为成员变量名（student）
+               * 如果还是找不到依赖的Bean，则以byType方式注入
+               */
+              @Resource(name = "student2")
+              private Student student;
+
+              public void say() {
+                  System.out.println(student.getName() + "，叫家长来一下。");
+              }
+
+}
           
 ####   3、Java配置类
 #####      需要定义一个config类作为Bean注入的配置类，如Config.java，代码如下：
