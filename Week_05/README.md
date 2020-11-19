@@ -372,7 +372,41 @@
 
       
 ### （必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：  
-####  1）使用 JDBC 原生接口，实现数据库的增删改查操作。  
-####  2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。     
+####  1）使用 JDBC 原生接口，实现数据库的增删改查操作。 
+##### 见jdbc工程的SimpleJdbc.java，由于时间问题，只做了新增，主要代码如下：
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+            connection = DriverManager.getConnection(url,"root","123456");
+            statement = connection.createStatement();
+            for(int i=1;i<= 10;i++){
+                String insertSql = "insert into user(id,username) values(" + i + ",'"+"name"+ i +"')";
+                System.out.println("===执行成功，影响记录数为:"+statement.executeUpdate(insertSql));
+            }
+####  2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。 
+##### 使用事务改进后的代码见jdbc工程的JdbcWithTransaction.java，主要代码如下
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+            connection = DriverManager.getConnection(url, "root", "123456");
+            <font color="red">connection.setAutoCommit(false);</font>
+            statement = connection.createStatement();
+            //执行前balance为90
+            String createUsersSql = "update user set balance = 70 where id = 1";
+            System.out.println("===执行成功，影响记录数为:" + statement.executeUpdate(createUsersSql));
+
+            if (true) {
+                throw new RuntimeException("系统异常");
+            }
+
+            String createUsersSq2 = "update user set balance = 50 where id = 1";
+            System.out.println("===执行成功，影响记录数为:" + statement.executeUpdate(createUsersSq2));
+            connection.commit();
+        } catch (Exception e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e.printStackTrace();
+            }
+            throw new RuntimeException(e);
+        }
 ####  3）配置 Hikari 连接池，改进上述操作。提交代码到 Github。 
-      见jdbc工程
+      
