@@ -374,39 +374,102 @@
 ### （必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：  
 ####  1）使用 JDBC 原生接口，实现数据库的增删改查操作。 
 ##### 见jdbc工程的SimpleJdbc.java，由于时间问题，只做了新增，主要代码如下：
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
-            connection = DriverManager.getConnection(url,"root","123456");
-            statement = connection.createStatement();
-            for(int i=1;i<= 10;i++){
-                String insertSql = "insert into user(id,username) values(" + i + ",'"+"name"+ i +"')";
-                System.out.println("===执行成功，影响记录数为:"+statement.executeUpdate(insertSql));
-            }
+                      Class.forName("com.mysql.jdbc.Driver");
+                      String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+                      connection = DriverManager.getConnection(url,"root","123456");
+                      statement = connection.createStatement();
+                      for(int i=1;i<= 10;i++){
+                          String insertSql = "insert into user(id,username) values(" + i + ",'"+"name"+ i +"')";
+                          System.out.println("===执行成功，影响记录数为:"+statement.executeUpdate(insertSql));
+                      }
 ####  2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。 
-##### 使用事务改进后的代码见jdbc工程的JdbcWithTransaction.java，主要代码如下
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
-            connection = DriverManager.getConnection(url, "root", "123456");
-            <font color="red">connection.setAutoCommit(false);</font>
-            statement = connection.createStatement();
-            //执行前balance为90
-            String createUsersSql = "update user set balance = 70 where id = 1";
-            System.out.println("===执行成功，影响记录数为:" + statement.executeUpdate(createUsersSql));
+##### 使用事务改进后的代码见jdbc工程的JdbcWithTransaction.java，主要是使用connection.setAutoCommit(false);这个方法先将自动提交改为false，
+##### 这里执行了两步操作，两次update之间如果抛出了异常，则在catch代码块中调用connection.rollback();对本次涉及的所有数据库操作进行回滚，
+##### 如整个过程执行正常，则在最后执行connection.commit();将所有数据库操作提交，主要代码如下:
+                      Class.forName("com.mysql.jdbc.Driver");
+                      String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+                      connection = DriverManager.getConnection(url, "root", "123456");
+                      connection.setAutoCommit(false);
+                      statement = connection.createStatement();
+                      //执行前balance为90
+                      String createUsersSql = "update user set balance = 70 where id = 1";
+                      System.out.println("===执行成功，影响记录数为:" + statement.executeUpdate(createUsersSql));
 
-            if (true) {
-                throw new RuntimeException("系统异常");
-            }
+                      if (true) {
+                          throw new RuntimeException("系统异常");
+                      }
 
-            String createUsersSq2 = "update user set balance = 50 where id = 1";
-            System.out.println("===执行成功，影响记录数为:" + statement.executeUpdate(createUsersSq2));
-            connection.commit();
-        } catch (Exception e) {
-            try {
-                connection.rollback();
-            } catch (SQLException e1) {
-                e.printStackTrace();
-            }
-            throw new RuntimeException(e);
-        }
+                      String createUsersSq2 = "update user set balance = 50 where id = 1";
+                      System.out.println("===执行成功，影响记录数为:" + statement.executeUpdate(createUsersSq2));
+                      connection.commit();
+                     } catch (Exception e) {
+                      try {
+                          connection.rollback();
+                      } catch (SQLException e1) {
+                          e.printStackTrace();
+                      }
+                      throw new RuntimeException(e);
+                  }
+
+##### 使用PrepareStatement和批处理改进后的代码见jdbc工程的JdbcPrepareStatement.java，使用PrepareStatement解决的问题主要是将Statement传参需要拼接sql的问题，
+##### 改为PrepareStatement后，使用?占位符的方式能解决sql拼接繁琐的问题，并解决sql注入问题，批处理的实现主要是调用preparedStatement.addBatch();将每条要执行的sql添加到批次中，
+##### 最后调用preparedStatement.executeBatch();批量提交，主要代码如下：
+                  Connection connection = null;
+                  PreparedStatement preparedStatement = null;
+                  try {
+                      Class.forName("com.mysql.jdbc.Driver");
+                      String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+                      connection = DriverManager.getConnection(url,"root","123456");
+                      connection.setAutoCommit(false);
+                      String insertSql = "insert into user(id,username) values(?,?)";
+                      preparedStatement = connection.prepareStatement(insertSql);
+                      for(int i=1;i<= 10;i++){
+                          preparedStatement.setInt(1,i);
+                          preparedStatement.setString(2,"name"+i);
+                          preparedStatement.addBatch();
+          //                System.out.println("===执行成功，影响记录数为:"+preparedStatement.executeUpdate());
+                      }
+                      preparedStatement.executeBatch();
+          //            String createUsersSql = "update user set username = 'xiaohui2222' where age = 10";
+                      connection.commit();
+                  } catch (Exception e) {
+                      try {
+                          connection.rollback();
+                      } catch (SQLException e1) {
+                          e.printStackTrace();
+                      }
+                      throw new RuntimeException(e);
+                  }
+        
 ####  3）配置 Hikari 连接池，改进上述操作。提交代码到 Github。 
-      
+##### 见jdbc工程的JdbcWithHikari.java,同时需要定义一个配置文件用来声明连接池需要用的数据库连接信息，见hikari.properties，原来使用jdbc自带的DriverManager获取连接的操作改为
+##### 使用Hikari的数据库连接池HikariDataSource获取数据库连接，主要代码如下：
+                  Connection connection = null;
+                  PreparedStatement preparedStatement = null;
+                  try (InputStream is = JdbcWithHikari.class.getClassLoader().getResourceAsStream("hikari.properties")) {
+                      // 加载属性文件并解析：
+                      Properties props = new Properties();
+                      props.load(is);
+                      HikariConfig config = new HikariConfig(props);
+                      HikariDataSource sHikariDataSource = new HikariDataSource(config);
+                      connection = sHikariDataSource.getConnection();
+                      connection.setAutoCommit(false);
+                      String insertSql = "insert into user(id,username) values(?,?)";
+                      preparedStatement = connection.prepareStatement(insertSql);
+                      for(int i=1;i<= 10;i++){
+                          preparedStatement.setInt(1,i);
+                          preparedStatement.setString(2,"name"+i);
+                          preparedStatement.addBatch();
+          //                System.out.println("===执行成功，影响记录数为:"+preparedStatement.executeUpdate());
+                      }
+                      preparedStatement.executeBatch();
+          //            String createUsersSql = "update user set username = 'xiaohui2222' where age = 10";
+                      connection.commit();
+                  } catch (Exception e) {
+                      try {
+                          connection.rollback();
+                      } catch (SQLException e1) {
+                          e.printStackTrace();
+                      }
+                      throw new RuntimeException(e);
+                  }
