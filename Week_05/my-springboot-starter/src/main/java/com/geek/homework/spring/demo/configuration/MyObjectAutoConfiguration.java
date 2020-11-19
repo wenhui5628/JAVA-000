@@ -1,5 +1,4 @@
 package com.geek.homework.spring.demo.configuration;
-
 import com.geek.homework.spring.demo.component.Klass;
 import com.geek.homework.spring.demo.component.School;
 import com.geek.homework.spring.demo.component.Student;
@@ -10,7 +9,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +19,6 @@ import java.util.List;
 @Configuration
 @EnableConfigurationProperties(MyProperties.class)
 public class MyObjectAutoConfiguration {
-
 
     @Configuration
     static class SchoolAutoConfiguration {
@@ -46,7 +43,6 @@ public class MyObjectAutoConfiguration {
 
     @Configuration
     static class KlassAutoConfiguration {
-
         @Bean
         @ConditionalOnMissingBean
         @ConditionalOnProperty(name = "klass.enabled", havingValue = "true", matchIfMissing = true)
@@ -64,7 +60,6 @@ public class MyObjectAutoConfiguration {
 
     @Configuration
     static class StudentAutoConfiguration {
-
         @Bean
         @ConditionalOnMissingBean
         @ConditionalOnProperty(name = "student.enabled", havingValue = "true", matchIfMissing = true)
@@ -72,6 +67,4 @@ public class MyObjectAutoConfiguration {
             return new Student(myProperties.getStudentId(), myProperties.getStudentName());
         }
     }
-
-
 }

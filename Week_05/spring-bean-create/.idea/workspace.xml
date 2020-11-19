@@ -6,7 +6,7 @@
       <change beforePath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-agent-test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent-test/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-springboot-starter/src/main/java/com/geek/homework/spring/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../my-springboot-starter/src/main/java/com/geek/homework/spring/demo/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-springboot-starter/src/main/java/com/geek/homework/spring/demo/configuration/MyObjectAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../my-springboot-starter/src/main/java/com/geek/homework/spring/demo/configuration/MyObjectAutoConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" beforeDir="false" />
