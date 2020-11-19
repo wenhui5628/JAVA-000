@@ -2,59 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8efc3d09-6a22-43f6-9a34-c7e72bd87bae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoptest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aop/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aop/wwh/AopTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aop/wwh/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/geek/homework/spring/demo/component/ISchool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/geek/homework/spring/demo/component/Klass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/geek/homework/spring/demo/component/School.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/geek/homework/spring/demo/component/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/geek/homework/spring/demo/configuration/MyObjectAutoConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/geek/homework/spring/demo/configuration/MyProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/Teacher2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/Teacher3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/service/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/annotation/service/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/Config2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/StudentConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/StudentConfig2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/TeacherConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/TeacherConfig2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/config/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/xml/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/xml/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/xml/Teacher2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/java/com/geek/homework/week5/bean/xml/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../week5/week5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../jdbc/src/main/resources/hikari.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_03/gateway-homework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_03/gateway-homework/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/FirstAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/FirstAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/target/aop-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/target/aop-demo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/target/original-aop-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/target/original-aop-demo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-bean-create/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-bean-create/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/resources/hikari.properties" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,8 +40,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/aop/wwh/AopTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            <state relative-caret-position="150">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="e#113#114#0" expanded="true" />
+                <element signature="e#136#137#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,7 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,13 +181,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605528403569" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605762995325" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -242,8 +208,7 @@
   <component name="RunManager">
     <configuration name="AopTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aop.wwh.AopTest" />
-      <module name="aoptest" />
-      <option name="VM_PARAMETERS" value="-javaagent:D:\geek\homework\JAVA-000\Week_05\aopdemo\target\aop-demo-1.0-SNAPSHOT.jar" />
+      <option name="VM_PARAMETERS" value="-javaagent:D:\geek\homework\JAVA-000\Week_05\java-agent\target\aop-demo-1.0-SNAPSHOT.jar" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.aop.wwh.*" />
@@ -274,22 +239,22 @@
       <workItem from="1605491423282" duration="5428000" />
       <workItem from="1605535726633" duration="1196000" />
       <workItem from="1605710071780" duration="22000" />
+      <workItem from="1605762430412" duration="565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9264000" />
+    <option name="totallyTimeSpent" value="9829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20533548" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.16734034" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="1" />
@@ -301,13 +266,13 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.32740214" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.54626334" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="14" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Maven Projects" order="1" visible="true" weight="0.1406629" />
+      <window_info anchor="right" id="Maven Projects" order="1" visible="true" weight="0.18916734" />
       <window_info anchor="right" id="SciView" order="2" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
@@ -351,8 +316,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/aop/wwh/AopTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="150">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -4,9 +4,13 @@
     <list default="true" id="9912b416-6680-44af-9b30-28d816c16e11" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Week_03/gateway-homework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_03/gateway-homework/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_04/week4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent-test/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent-test/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent-test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent-test/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-agent/aop-demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/bytebuddy/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/bytebuddy/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/FirstAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/src/main/java/com/spring/aop/demo/FirstAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/target/aop-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/target/aop-demo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-agent/target/original-aop-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-agent/target/original-aop-demo-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
@@ -433,16 +437,15 @@
       <option name="presentableId" value="Default" />
       <updated>1605536647915</updated>
       <workItem from="1605536651052" duration="10561000" />
-      <workItem from="1605754373531" duration="3021000" />
+      <workItem from="1605754373531" duration="3142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13582000" />
+    <option name="totallyTimeSpent" value="13703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2077607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

@@ -3,7 +3,7 @@ package com.spring.aop.demo;
 import java.lang.instrument.Instrumentation;
 
 /**
- * Hello world!
+ * 入口类
  */
 public class App {
     public static void premain(String agentOps, Instrumentation inst) {
