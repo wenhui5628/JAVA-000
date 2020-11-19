@@ -360,8 +360,15 @@
 #### 3、在spring.factories配置文件中指定MyObjectAutoConfiguration作为自动装配的starter，配置如下：
           org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
           com.geek.homework.spring.demo.configuration.MyObjectAutoConfiguration
+          
+#### 4、在application.properties配置文件中设置是否装配Bean的开关，如下：
+          klass.enabled=true
+          student.enabled=true
+          school.enabled=true
 
-#### 4、运行结果如下：
+#### 5、运行结果如下：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_05/springboot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D.png)
+          从结果中可以看到，Student、School、Klass在启动的时候被自动装配了，并且我们通过applicationContext.getBean的时候是能拿到被装配好的对象的
 
       
 ### （必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：  
