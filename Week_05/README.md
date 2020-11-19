@@ -116,7 +116,7 @@
 #### （超级挑战）尝试使用ByteBuddy与Instrument实现一个简单JavaAgent实现无侵入下的 AOP；         
 ##### 见java-agent和java-agent-test
 ##### 思路：我理解的无侵入，是指目前已经有在运行的代码，在不改动原代码和配置的情况下，使用AOP对原代码做一个增强，下面分别用了ByteBuddy和Instrument实现了一下这个问题，如下：
-##### 使用ByteBuddy，
+##### 一、使用ByteBuddy方式
 ##### 1.先准备一个业务类Service.java，如下：
           package com.spring.aop.demo.bytebuddy;
 
@@ -184,9 +184,75 @@
           Enter foo with arguments: [456]
           foo: 456
           Exit foo with arguments: [456] return: 456
+          、
+ ####  二、使用Instrument的方式，这种方式会实现一个javaAgent，作为业务类运行时的一个引擎对类进行增强，如下：
+ ##### 1、准备引擎类FirstAgent，如下:
+          package com.spring.aop.demo;
+
+          import javassist.ClassPool;
+          import javassist.CtClass;
+          import javassist.CtMethod;
+
+          import java.lang.instrument.ClassFileTransformer;
+          import java.lang.instrument.IllegalClassFormatException;
+          import java.security.ProtectionDomain;
+
+          public class FirstAgent implements ClassFileTransformer {
+              public final String injectedClassName = "com.aop.wwh.Aop";
+          //    public final String methodName = "hello";
+
+              public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws                   IllegalClassFormatException {
+                  className = className.replace("/", ".");
+                  if (className.contains(injectedClassName)) {    //定义需要增强的类的规则，这里是所有类名包含com.aop.wwh.Aop这个关键字的都增强
+                      CtClass ctclass = null;
+                      try {
+                          ctclass = ClassPool.getDefault().get(className);// 使用全称,用于取得字节码类<使用javassist>
+                          CtMethod[] ctMethods = ctclass.getDeclaredMethods();
+                          for(CtMethod ctmethod : ctMethods){ //这里表示对所有业务方法做增强
+                              System.out.println("===调用的业务方法:"+ctmethod.getName());
+                              ctmethod.insertBefore("{System.out.println(\"打印记录日志\"); }");
+                          }
+          //                CtMethod ctmethod = ctclass.getDeclaredMethod(methodName);// 得到这方法实例
+          //                ctmethod.insertBefore("System.out.println(11111111);");
+                          return ctclass.toBytecode();
+                      } catch (Exception e) {
+                          System.out.println(e.getMessage());
+                          e.printStackTrace();
+                      }
+                  }
+                  return null;
+              }
+          }
+
+##### 2、引擎的入口类代码如下：
+          package com.spring.aop.demo;
+
+          import java.lang.instrument.Instrumentation;
+
+          /**
+           * 入口类
+           */
+          public class App {
+              public static void premain(String agentOps, Instrumentation inst) {
+                  System.out.println("=========premain方法执行========");
+                  System.out.println(agentOps);
+                  // 添加Transformer
+                  inst.addTransformer(new FirstAgent());
+              }
+          }
+##### 3、将这个引擎类打成jar包，aop-demo-1.0-SNAPSHOT.jar
+
+##### 4、运行目标业务类，运行时加上以下参数：
+      -javaagent:D:\geek\homework\JAVA-000\Week_05\java-agent\target\aop-demo-1.0-SNAPSHOT.jar
+      
+##### 5、运行结果如下：      
+          =========premain方法执行========
+          ===调用的业务方法:main
+          ===调用的业务方法:hello
+          打印记录日志
+          打印记录日志
+          this is agent-demo output
           
-      
-      
          
 #### （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。        
       见my-springboot-starter工程
