@@ -3,13 +3,10 @@ package com.geek.homework.spring.demo;
 import com.geek.homework.spring.demo.component.Klass;
 import com.geek.homework.spring.demo.component.School;
 import com.geek.homework.spring.demo.component.Student;
-import com.sun.deploy.util.ArrayUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.util.CollectionUtils;
-import org.yaml.snakeyaml.util.ArrayUtils;
 
 import java.util.Arrays;
 
