@@ -293,7 +293,7 @@
 ####  见my-springboot-starter工程
 ####  步骤如下：
 ####  1、使用@SpringBootApplication标注SpringBoot 的主配置类，工程中指定了DemoApplication.java作为主配置类，代码如下：
-          package com.geek.homework.spring.demo;
+           package com.geek.homework.spring.demo;
 
           import com.geek.homework.spring.demo.component.Klass;
           import com.geek.homework.spring.demo.component.School;
@@ -309,17 +309,19 @@
           @Slf4j
           public class DemoApplication {
 
-                    public static void main(String[] args) {
-                              ConfigurableApplicationContext applicationContext = SpringApplication.run(DemoApplication.class, args);
-                              Student student = applicationContext.getBean(Student.class);
-                              School school = applicationContext.getBean(School.class);
-                              Klass klass = applicationContext.getBean(Klass.class);
-                              log.info("studentId:"+student.getId() +",studentName:"+student.getName());
-                              log.info("schoolInfo have students:"+ Arrays.toString(school.getClass1().getStudents().toArray()) +",and student100                                                           info:"+school.getStudent100());
-                              log.info("klass info:"+ Arrays.toString(klass.getStudents().toArray()));
-                    }
+	     public static void main(String[] args) {
+		ConfigurableApplicationContext applicationContext = SpringApplication.run(DemoApplication.class, args);
+		Student student = applicationContext.getBean(Student.class);
+		School school = applicationContext.getBean(School.class);
+		Klass klass = applicationContext.getBean(Klass.class);
+		log.info("studentId:"+student.getId() +",studentName:"+student.getName());
+		log.info("schoolInfo have students:"+ Arrays.toString(school.getClass1().getStudents().toArray()) +",and student100 info:"+school.getStudent100());
+		log.info("klass info:"+ Arrays.toString(klass.getStudents().toArray()));
+	    }
 
           }
+         
+          
 #### 2、使用@Configuration定义配置类，并通过@EnableConfigurationProperties注解指定配置类使用的读取application.yml配置文件的工具类，代码如下：
           package com.geek.homework.spring.demo.configuration;
           import com.geek.homework.spring.demo.component.Klass;
