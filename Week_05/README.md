@@ -254,10 +254,117 @@
           this is agent-demo output
           
          
-#### （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。        
-      见my-springboot-starter工程
+### （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。        
+####  见my-springboot-starter工程
+####  步骤如下：
+####  1、使用@SpringBootApplication标注SpringBoot 的主配置类，工程中指定了DemoApplication.java作为主配置类，代码如下：
+          package com.geek.homework.spring.demo;
+
+          import com.geek.homework.spring.demo.component.Klass;
+          import com.geek.homework.spring.demo.component.School;
+          import com.geek.homework.spring.demo.component.Student;
+          import lombok.extern.slf4j.Slf4j;
+          import org.springframework.boot.SpringApplication;
+          import org.springframework.boot.autoconfigure.SpringBootApplication;
+          import org.springframework.context.ConfigurableApplicationContext;
+
+          import java.util.Arrays;
+
+          @SpringBootApplication
+          @Slf4j
+          public class DemoApplication {
+
+                    public static void main(String[] args) {
+                              ConfigurableApplicationContext applicationContext = SpringApplication.run(DemoApplication.class, args);
+                              Student student = applicationContext.getBean(Student.class);
+                              School school = applicationContext.getBean(School.class);
+                              Klass klass = applicationContext.getBean(Klass.class);
+                              log.info("studentId:"+student.getId() +",studentName:"+student.getName());
+                              log.info("schoolInfo have students:"+ Arrays.toString(school.getClass1().getStudents().toArray()) +",and student100                                                           info:"+school.getStudent100());
+                              log.info("klass info:"+ Arrays.toString(klass.getStudents().toArray()));
+                    }
+
+          }
+#### 2、使用@Configuration定义配置类，并通过@EnableConfigurationProperties注解指定配置类使用的读取application.yml配置文件的工具类，代码如下：
+          package com.geek.homework.spring.demo.configuration;
+          import com.geek.homework.spring.demo.component.Klass;
+          import com.geek.homework.spring.demo.component.School;
+          import com.geek.homework.spring.demo.component.Student;
+          import org.springframework.beans.factory.annotation.Autowired;
+          import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+          import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+          import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+          import org.springframework.boot.context.properties.EnableConfigurationProperties;
+          import org.springframework.context.annotation.Bean;
+          import org.springframework.context.annotation.Configuration;
+          import java.util.ArrayList;
+          import java.util.List;
+
+          /**
+           * 自动创建对象示例，例子中我们创建Teacher与Student对象。
+           * 当项目打成jar包依赖到其他Spring容器中，这些对象我们可以自动进行注入
+           */
+          @Configuration
+          @EnableConfigurationProperties(MyProperties.class)
+          public class MyObjectAutoConfiguration {
+
+              @Configuration
+              static class SchoolAutoConfiguration {
+
+                  @Bean
+                  @ConditionalOnClass({School.class, Student.class , Klass.class})
+                  @ConditionalOnProperty(name = "school.enabled", havingValue = "true", matchIfMissing = true)
+                  public static School school() {
+                      School school = new School();
+                      Klass klass = new Klass();
+                      List<Student> students = new ArrayList<>();
+                      Student student1 = new Student(100,"xiaoli");
+                      Student student2 = new Student(101,"xiaodong");
+                      students.add(student1);
+                      students.add(student2);
+                      school.setStudent100(student1);
+                      klass.setStudents(students);
+                      school.setClass1(klass);
+                      return school;
+                  }
+              }
+
+              @Configuration
+              static class KlassAutoConfiguration {
+                  @Bean
+                  @ConditionalOnMissingBean
+                  @ConditionalOnProperty(name = "klass.enabled", havingValue = "true", matchIfMissing = true)
+                  public Klass klass(@Autowired MyProperties myProperties) {
+                      Klass klass = new Klass();
+                      List<Student> students = new ArrayList<>();
+                      Student student1 = new Student(1,"lili");
+                      Student student2 = new Student(2,"momo");
+                      students.add(student1);
+                      students.add(student2);
+                      klass.setStudents(students);
+                      return klass;
+                  }
+              }
+
+              @Configuration
+              static class StudentAutoConfiguration {
+                  @Bean
+                  @ConditionalOnMissingBean
+                  @ConditionalOnProperty(name = "student.enabled", havingValue = "true", matchIfMissing = true)
+                  public Student student(@Autowired MyProperties myProperties) {
+                      return new Student(myProperties.getStudentId(), myProperties.getStudentName());
+                  }
+              }
+          }
+
+#### 3、在spring.factories配置文件中指定MyObjectAutoConfiguration作为自动装配的starter，配置如下：
+          org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+          com.geek.homework.spring.demo.configuration.MyObjectAutoConfiguration
+
+#### 4、运行结果如下：
+
       
-#### （必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：  
+### （必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：  
 ####  1）使用 JDBC 原生接口，实现数据库的增删改查操作。  
 ####  2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。     
 ####  3）配置 Hikari 连接池，改进上述操作。提交代码到 Github。 
