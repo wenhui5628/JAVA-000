@@ -45,7 +45,7 @@
           -->
              <bean id="teacher3" class="com.geek.homework.week5.bean.xml.Teacher" autowire="constructor"/>
          
-#####  5）在<beans>中设置默认的自动装配方式,如下：
+#####  5）在beans中设置默认的自动装配方式,如下：
        需要在beans配置中加上这个配置default-autowire="byName"，这里表示默认的自动装配方式是byName，如下：
             <!--
               在<beans>中设置默认的自动装配方式，在需要使用自动装配的<bean>指定autowire="default"，
