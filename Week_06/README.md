@@ -12,9 +12,9 @@
       支付信息:payment_info
 
 #### 各表之间关系说明如下：
-      customer_info和order_master：
-   　 customer_info ---> order_master : 一个用户可以创建多个订单， 一对多
-  　　order_master ---> customer_info : 一个订单只有一个用户创建， 一对一
+       customer_info和order_master：
+   　  customer_info ---> order_master : 一个用户可以创建多个订单， 一对多
+  　　 order_master ---> customer_info : 一个订单只有一个用户创建， 一对一
    
   　　order_master和order_detail：
    　 order_master ---> order_detail : 一个订单可以包含多个订单明细，因为一个订单可以购买多个商品，每个商品的购买信息在orderDetail表中记录， 一对多
