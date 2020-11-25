@@ -13,24 +13,24 @@
 
 #### 各表之间关系说明如下：
       customer_info和order_master：
-      customer_info ---> order_master : 一个用户可以创建多个订单， 一对多
-      order_master ---> customer_info : 一个订单只有一个用户创建， 一对一
+      customer_info ---> order_master : 一个用户可以创建多个订单，一对多
+      order_master ---> customer_info : 一个订单只有一个用户创建，一对一
 
       order_master和order_detail：
-      order_master ---> order_detail : 一个订单可以包含多个订单明细，因为一个订单可以购买多个商品，每个商品的购买信息在orderDetail表中记录， 一对多
+      order_master ---> order_detail : 一个订单可以包含多个订单明细，因为一个订单可以购买多个商品，每个商品的购买信息在orderDetail表中记录，一对多
       order_detail ---> order_master : 一个订单明细只能包含在一个订单中， 一对一
 
       order_detail 和 product_info：
       order_detail ---> product_info : 一个订单明细只对应一个商品信息，一对一
-      product_info ---> order_detail : 一个商品包含在多个订单明细中， 一对多
+      product_info ---> order_detail : 一个商品包含在多个订单明细中，一对多
 
       product_info 和 product_category：
       product_info ---> product_category : 一件商品属于一种商品类别，一对一
-      product_category ---> product_info : 一种商品类别包含多个商品， 一对多
+      product_category ---> product_info : 一种商品类别包含多个商品，一对多
 
       order_master 和 payment_info：
       order_master ---> payment_info : 一个订单对应一笔支付信息，一对一
-      payment_info ---> order_master : 一笔支付信息对应一个订单， 一对一
+      payment_info ---> order_master : 一笔支付信息对应一个订单，一对一
      
  #### 详细的建表语句如下：
        /*==============================================================*/
