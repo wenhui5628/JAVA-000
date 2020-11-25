@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/11/26 0:24:51                           */
+/* Created on:     2020/11/26 0:39:54                           */
 /*==============================================================*/
 
 
@@ -75,7 +75,7 @@ alter table order_master comment '订单信息表';
 create table payment_info
 (
    pay_id               int not null auto_increment comment '支付信息id',
-   user_id              int not null comment '用户id',
+   customer_id          int not null comment '用户id',
    order_id             int not null comment '订单id',
    pay_jrn_no           bigint not null comment '支付流水号',
    pay_status           tinyint not null default 0 comment '支付状态，0表示未支付，1表示已支付',
