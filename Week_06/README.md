@@ -17,7 +17,7 @@
       order_master ---> customer_info : 一个订单只有一个用户创建，一对一
 
       order_master和order_detail：
-      order_master ---> order_detail : 一个订单可以包含多个订单明细，因为一个订单可以购买多个商品，每个商品的购买信息在orderDetail表中记录，一对多
+      order_master ---> order_detail : 一个订单可以包含多个订单明细，因为一个订单可以购买多个商品，每个商品的购买信息在order_detail表中记录，一对多
       order_detail ---> order_master : 一个订单明细只能包含在一个订单中， 一对一
 
       order_detail 和 product_info：
