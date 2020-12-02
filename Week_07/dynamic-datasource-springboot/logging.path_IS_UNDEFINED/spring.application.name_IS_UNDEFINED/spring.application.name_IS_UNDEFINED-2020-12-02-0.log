@@ -1,0 +1,736 @@
+[2020-12-02 00:40:53,760][INFO ] c.comven.example.App[48] - Starting App on LAPTOP-UTMT03GB with PID 44500 (D:\geek\dynamic-datasource-springboot\target\classes started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 00:40:53,766][INFO ] c.comven.example.App[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 00:40:53,846][INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext[582] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f1de4c7: startup date [Wed Dec 02 00:40:53 CST 2020]; root of context hierarchy
+[2020-12-02 00:40:54,068][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 00:40:56,884][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$92d5d7e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 00:40:57,303][INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer[89] - Tomcat initialized with port(s): 80 (http)
+[2020-12-02 00:40:57,321][INFO ] o.a.c.c.StandardService[179] - Starting service Tomcat
+[2020-12-02 00:40:57,323][INFO ] o.a.c.c.StandardEngine[179] - Starting Servlet Engine: Apache Tomcat/8.5.11
+[2020-12-02 00:40:57,494][INFO ] o.a.c.c.C.[.[.[/][179] - Initializing Spring embedded WebApplicationContext
+[2020-12-02 00:40:57,494][INFO ] o.s.w.c.ContextLoader[276] - Root WebApplicationContext: initialization completed in 3648 ms
+[2020-12-02 00:40:57,820][INFO ] o.s.b.w.s.ServletRegistrationBean[190] - Mapping servlet: 'dispatcherServlet' to [/]
+[2020-12-02 00:40:57,825][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2020-12-02 00:40:57,825][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2020-12-02 00:40:57,825][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2020-12-02 00:40:57,826][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'requestContextFilter' to: [/*]
+[2020-12-02 00:40:58,425][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f1de4c7: startup date [Wed Dec 02 00:40:53 CST 2020]; root of context hierarchy
+[2020-12-02 00:40:58,477][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 00:40:58,478][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 00:40:58,513][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 00:40:58,513][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 00:40:58,549][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 00:40:58,893][INFO ] o.s.j.e.a.AnnotationMBeanExporter[431] - Registering beans for JMX exposure on startup
+[2020-12-02 00:40:58,907][INFO ] o.a.c.h.Http11NioProtocol[179] - Initializing ProtocolHandler ["http-nio-80"]
+[2020-12-02 00:40:58,916][INFO ] o.a.c.h.Http11NioProtocol[179] - Starting ProtocolHandler [http-nio-80]
+[2020-12-02 00:40:58,934][INFO ] o.a.t.u.n.NioSelectorPool[179] - Using a shared selector for servlet write/read
+[2020-12-02 00:40:58,954][INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer[198] - Tomcat started on port(s): 80 (http)
+[2020-12-02 00:40:58,958][INFO ] c.comven.example.App[57] - Started App in 6.051 seconds (JVM running for 9.499)
+[2020-12-02 00:56:34,368][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 6884 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 00:56:34,370][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 00:56:34,405][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 00:56:34 CST 2020]; root of context hierarchy
+[2020-12-02 00:56:34,738][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 00:56:35,912][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6fc2d68c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 00:56:36,370][WARN ] o.s.w.c.s.GenericWebApplicationContext[550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+[2020-12-02 00:56:36,378][INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer[101] - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[2020-12-02 00:56:36,415][ERROR] o.s.b.SpringApplication[815] - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 00:56:36,424][ERROR] o.s.t.c.TestContextManager[234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5bfbf16f] to prepare test instance [AppTest@52fc5eb1]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:02:12,852][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 41936 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:02:12,854][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:02:12,890][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@65987993: startup date [Wed Dec 02 01:02:12 CST 2020]; root of context hierarchy
+[2020-12-02 01:02:13,301][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:02:14,681][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1e3d8c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:02:15,219][WARN ] o.s.w.c.s.GenericWebApplicationContext[550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+[2020-12-02 01:02:15,226][INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer[101] - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[2020-12-02 01:02:15,237][ERROR] o.s.b.SpringApplication[815] - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:02:15,243][ERROR] o.s.t.c.TestContextManager[234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1e7c7811] to prepare test instance [AppTest@6272c96f]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:03:57,822][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 39996 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:03:57,824][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:03:57,865][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@65987993: startup date [Wed Dec 02 01:03:57 CST 2020]; root of context hierarchy
+[2020-12-02 01:03:58,251][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:03:59,357][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$58a813e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:03:59,868][WARN ] o.s.w.c.s.GenericWebApplicationContext[550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+[2020-12-02 01:03:59,881][INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer[101] - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[2020-12-02 01:03:59,894][ERROR] o.s.b.SpringApplication[815] - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:03:59,899][ERROR] o.s.t.c.TestContextManager[234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1e7c7811] to prepare test instance [AppTest@417d6615]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:04:44,764][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 32204 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:04:44,766][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:04:44,811][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@548a24a: startup date [Wed Dec 02 01:04:44 CST 2020]; root of context hierarchy
+[2020-12-02 01:04:45,222][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:04:46,407][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$87a16990] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:04:46,774][WARN ] o.s.w.c.s.GenericWebApplicationContext[550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceAspect': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'slave.hosts' in value "${slave.hosts}"
+[2020-12-02 01:04:46,785][INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer[101] - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[2020-12-02 01:04:46,795][ERROR] o.s.b.SpringApplication[815] - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceAspect': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'slave.hosts' in value "${slave.hosts}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'slave.hosts' in value "${slave.hosts}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:831)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1086)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	... 40 common frames omitted
+[2020-12-02 01:04:46,801][ERROR] o.s.t.c.TestContextManager[234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5bfbf16f] to prepare test instance [AppTest@3ff57625]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceAspect': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'slave.hosts' in value "${slave.hosts}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'slave.hosts' in value "${slave.hosts}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:831)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1086)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	... 40 common frames omitted
+[2020-12-02 01:06:09,582][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 42984 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:06:09,584][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:06:09,630][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:06:09 CST 2020]; root of context hierarchy
+[2020-12-02 01:06:10,044][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:06:12,901][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f0a985fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:06:13,261][WARN ] o.s.w.c.s.GenericWebApplicationContext[550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+[2020-12-02 01:06:13,269][INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer[101] - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[2020-12-02 01:06:13,279][ERROR] o.s.b.SpringApplication[815] - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:06:13,284][ERROR] o.s.t.c.TestContextManager[234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5bfbf16f] to prepare test instance [AppTest@2a49fe]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/comven/example/config/DataSourceConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Illegal data source value - only [javax.sql.DataSource] and String supported: null
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.resolveSpecifiedDataSource(AbstractRoutingDataSource.java:156)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.afterPropertiesSet(AbstractRoutingDataSource.java:118)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 39 common frames omitted
+[2020-12-02 01:07:52,801][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 36012 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:07:52,802][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:07:53,165][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:07:54,967][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@312aa7c: startup date [Wed Dec 02 01:07:54 CST 2020]; root of context hierarchy
+[2020-12-02 01:07:56,188][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$31a4922e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:07:57,563][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@312aa7c: startup date [Wed Dec 02 01:07:54 CST 2020]; root of context hierarchy
+[2020-12-02 01:07:57,658][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:07:57,660][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:07:57,728][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:07:57,728][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:07:57,793][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:07:58,220][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 6.005 seconds (JVM running for 7.189)
+[2020-12-02 01:07:58,496][INFO ] c.z.h.HikariDataSource[93] - HikariPool-1 - Started.
+[2020-12-02 01:07:58,827][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:07:58,828][INFO ] c.z.h.HikariDataSource[93] - HikariPool-2 - Started.
+[2020-12-02 01:07:58,849][INFO ] c.c.exmaple.AppTest[29] - 2->=slave1
+[2020-12-02 01:07:58,854][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@312aa7c: startup date [Wed Dec 02 01:07:54 CST 2020]; root of context hierarchy
+[2020-12-02 01:09:11,142][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 1056 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:09:11,144][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:09:11,187][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:09:11 CST 2020]; root of context hierarchy
+[2020-12-02 01:09:11,586][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:09:14,413][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1e3d8c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:09:15,724][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:09:11 CST 2020]; root of context hierarchy
+[2020-12-02 01:09:15,825][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:09:15,827][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:09:15,903][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:09:15,904][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:09:15,965][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:09:16,322][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 5.759 seconds (JVM running for 7.015)
+[2020-12-02 01:09:16,428][INFO ] c.z.h.HikariDataSource[93] - HikariPool-1 - Started.
+[2020-12-02 01:09:16,830][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:09:16,832][INFO ] c.z.h.HikariDataSource[93] - HikariPool-2 - Started.
+[2020-12-02 01:09:16,852][INFO ] c.c.exmaple.AppTest[29] - 2->=slave1
+[2020-12-02 01:09:16,858][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:09:11 CST 2020]; root of context hierarchy
+[2020-12-02 01:09:24,617][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 43760 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:09:24,619][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:09:24,659][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:09:24 CST 2020]; root of context hierarchy
+[2020-12-02 01:09:25,052][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:09:26,220][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$67736851] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:09:27,984][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:09:24 CST 2020]; root of context hierarchy
+[2020-12-02 01:09:28,081][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:09:28,083][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:09:28,152][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:09:28,153][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:09:28,242][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:09:28,737][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 4.743 seconds (JVM running for 6.045)
+[2020-12-02 01:09:28,849][INFO ] c.z.h.HikariDataSource[93] - HikariPool-1 - Started.
+[2020-12-02 01:09:30,930][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:09:30,932][INFO ] c.z.h.HikariDataSource[93] - HikariPool-2 - Started.
+[2020-12-02 01:09:30,989][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
+[2020-12-02 01:09:30,996][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@25be7b63: startup date [Wed Dec 02 01:09:24 CST 2020]; root of context hierarchy
+[2020-12-02 01:23:40,503][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 44216 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:23:40,505][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:23:40,552][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@431cd9b2: startup date [Wed Dec 02 01:23:40 CST 2020]; root of context hierarchy
+[2020-12-02 01:23:40,952][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:23:42,068][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3da8496] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:23:44,343][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@431cd9b2: startup date [Wed Dec 02 01:23:40 CST 2020]; root of context hierarchy
+[2020-12-02 01:23:44,479][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:23:44,481][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:23:44,558][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:23:44,559][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:23:44,650][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:23:45,070][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 5.166 seconds (JVM running for 6.478)
+[2020-12-02 01:23:45,160][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-02 01:23:47,578][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:23:47,579][INFO ] c.z.h.HikariDataSource[93] - HikariPool-1 - Started.
+[2020-12-02 01:23:47,598][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
+[2020-12-02 01:23:47,605][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@431cd9b2: startup date [Wed Dec 02 01:23:40 CST 2020]; root of context hierarchy
+[2020-12-02 01:24:51,230][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 7408 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:24:51,233][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:24:51,271][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 01:24:51 CST 2020]; root of context hierarchy
+[2020-12-02 01:24:51,635][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:24:52,657][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$45a6176d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:24:54,879][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 01:24:51 CST 2020]; root of context hierarchy
+[2020-12-02 01:24:54,978][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:24:54,979][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:24:55,044][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:24:55,045][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:24:55,118][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:24:55,602][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 4.953 seconds (JVM running for 6.196)
+[2020-12-02 01:24:55,746][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-02 01:24:58,010][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:24:58,011][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
+[2020-12-02 01:24:58,033][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
+[2020-12-02 01:24:58,038][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 01:24:51 CST 2020]; root of context hierarchy
+[2020-12-02 01:32:33,129][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 18772 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:32:33,131][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:32:33,176][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 01:32:33 CST 2020]; root of context hierarchy
+[2020-12-02 01:32:33,583][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:32:34,753][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$533e1c5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:32:36,776][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 01:32:33 CST 2020]; root of context hierarchy
+[2020-12-02 01:32:36,870][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:32:36,872][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:32:36,936][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:32:36,936][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:32:37,030][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:32:37,511][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 4.991 seconds (JVM running for 6.173)
+[2020-12-02 01:32:37,632][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-02 01:32:39,898][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:32:39,899][INFO ] c.z.h.HikariDataSource[93] - slave1 - Started.
+[2020-12-02 01:32:39,929][INFO ] c.c.exmaple.AppTest[29] - 2->=slave1
+[2020-12-02 01:32:39,936][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 01:32:33 CST 2020]; root of context hierarchy
+[2020-12-02 01:32:50,114][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 42464 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:32:50,116][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:32:50,157][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Wed Dec 02 01:32:50 CST 2020]; root of context hierarchy
+[2020-12-02 01:32:50,567][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:32:51,650][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$224c0262] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:32:53,448][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Wed Dec 02 01:32:50 CST 2020]; root of context hierarchy
+[2020-12-02 01:32:53,536][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:32:53,538][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:32:53,603][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:32:53,603][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:32:53,679][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:32:54,177][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 4.752 seconds (JVM running for 6.086)
+[2020-12-02 01:32:54,371][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-02 01:32:56,625][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:32:56,627][INFO ] c.z.h.HikariDataSource[93] - slave1 - Started.
+[2020-12-02 01:32:56,645][INFO ] c.c.exmaple.AppTest[29] - 2->=slave1
+[2020-12-02 01:32:56,651][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Wed Dec 02 01:32:50 CST 2020]; root of context hierarchy
+[2020-12-02 01:33:03,386][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 42576 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 01:33:03,389][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 01:33:03,439][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Wed Dec 02 01:33:03 CST 2020]; root of context hierarchy
+[2020-12-02 01:33:03,889][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 01:33:05,473][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c47c5921] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 01:33:07,791][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Wed Dec 02 01:33:03 CST 2020]; root of context hierarchy
+[2020-12-02 01:33:07,884][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 01:33:07,886][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 01:33:07,946][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:33:07,946][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:33:08,044][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 01:33:08,513][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 5.941 seconds (JVM running for 7.205)
+[2020-12-02 01:33:08,617][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-02 01:33:10,971][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 01:33:10,972][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
+[2020-12-02 01:33:10,993][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
+[2020-12-02 01:33:10,998][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Wed Dec 02 01:33:03 CST 2020]; root of context hierarchy
+[2020-12-02 23:54:29,256][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 43300 (started by wenhu in D:\geek\dynamic-datasource-springboot)
+[2020-12-02 23:54:29,256][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-02 23:54:29,288][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 23:54:29 CST 2020]; root of context hierarchy
+[2020-12-02 23:54:29,873][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-02 23:54:31,493][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$45f26619] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-02 23:54:34,436][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 23:54:29 CST 2020]; root of context hierarchy
+[2020-12-02 23:54:34,570][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-02 23:54:34,570][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-02 23:54:34,658][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 23:54:34,658][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 23:54:34,755][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-02 23:54:35,330][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 6.895 seconds (JVM running for 8.335)
+[2020-12-02 23:54:35,485][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-02 23:54:38,399][INFO ] c.c.exmaple.AppTest[29] - 1->=master
+[2020-12-02 23:54:38,403][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
+[2020-12-02 23:54:38,466][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
+[2020-12-02 23:54:38,474][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@4b520ea8: startup date [Wed Dec 02 23:54:29 CST 2020]; root of context hierarchy
