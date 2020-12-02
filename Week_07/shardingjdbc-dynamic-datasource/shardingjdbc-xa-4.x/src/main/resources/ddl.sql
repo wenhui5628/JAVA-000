@@ -1,6 +1,0 @@
-DROP TABLE IF EXISTS account;
-CREATE TABLE account (
-  id int(11) NOT NULL AUTO_INCREMENT COMMENT '自增主键无意义',
-  balance decimal(18,2),
-  PRIMARY KEY (id)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
