@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/../../Week_05/java-agent/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/java-agent/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_05/jdbc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/jdbc/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dynamic-datasource-spring/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" beforeDir="false" />
@@ -213,7 +215,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1606929294274" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1606934447017" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -335,7 +337,7 @@
       <workItem from="1606925096675" duration="71000" />
       <workItem from="1606925463352" duration="78000" />
       <workItem from="1606925679814" duration="254000" />
-      <workItem from="1606926045246" duration="3031000" />
+      <workItem from="1606926045246" duration="3671000" />
     </task>
     <servers />
   </component>
@@ -372,7 +374,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16980000" />
+    <option name="totallyTimeSpent" value="17620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -390,7 +392,7 @@
       <window_info anchor="bottom" id="Messages" order="2" weight="0.37366548" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.5213523" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.5213523" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
