@@ -150,4 +150,164 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 #### 实现的效果图如下，根据具体的业务类型，动态切换数据源，如增删改这些请求使用主库，查询请求使用从库
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A21.png)
 
+#### 实现如下：
+#### 1、搭建主从复制环境，这一步是参考老师发的md文件中的步骤完成，主数据库端口使用3306，两个从数据库端口分别使用3316和3326；
+#### 2、分别使用了spring和spring Boot实现了动态切换数据源的效果，spring版本见工程dynamic-datasource-spring，spring Boot版本见工程dynamic-datasource-springboot；
+#### 3、spring版本的数据源配置见spring-mybatis.xml配置文件，spring boot版本数据源配置见application.yml配置文件；
+#### 4、spring版本的切换数据源涉及一下几步操作：
+##### 1）MultiDataSource.java类，继承AbstractRoutingDataSource，使用到AbstractRoutingDataSource的两个属性defaultTargetDataSource和targetDataSources，defaultTargetDataSource为默认目标数据源，targetDataSources（map类型）存放用来切换的数据源，配置完以后，其他地方用到数据源的话，都引用multiDataSource，MultiDataSource的代码如下：
+      package com.wwh.dataSource;
+
+      import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
+
+      public class MultiDataSource extends AbstractRoutingDataSource{
+
+            /*ThreadLocal线程本地变量或线程本地存储，ThreadLocal为变量在每个线程中都创建了一个副本，
+             * 那么每个线程可以访问自己内部的副本变量。
+            */
+            private static final ThreadLocal<String> dataSourceKey = new InheritableThreadLocal<String>();
+
+            /**
+             * 设置dataSourceKey的值
+             * @param dataSource
+             */
+            public static void setDataSourceKey(String dataSource) {
+                  dataSourceKey.set(dataSource);
+            }
+            /**
+             * 清除dataSourceKey的值
+             */
+            public static void toDefault() {
+                  dataSourceKey.remove();
+            }
+            /**
+             * 返回当前dataSourceKey的值
+             */
+            @Override
+            protected Object determineCurrentLookupKey() {
+                  return dataSourceKey.get();
+            }
+
+      }
+
+##### 2）涉及的配置如下，从spring-mybatis.xml配置文件中可以看到，beanid为multiDataSource的配置设置了defaultTargetDataSource和targetDataSources，defaultTargetDataSource引用的dataSource数据源是3306端口的主数据源，而targetDataSources配置使用的dataSource2和dataSource3分别是端口号为3316和3326的从数据源：
+      <context:property-placeholder location="classpath:jdbc.properties"/>
+
+          <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+                init-method="init" destroy-method="close">
+              <property name="driverClassName" value="${jdbc.driverClassName}"/>
+              <property name="url" value="${jdbc.url}"/>
+              <property name="username" value="${jdbc.username}"/>
+              <property name="password" value="${jdbc.password}"/>
+              <!-- 配置初始化大小、最小、最大 -->
+              <property name="initialSize" value="1"/>
+              <property name="minIdle" value="1"/>
+              <property name="maxActive" value="10"/>
+              <!-- 配置获取连接等待超时的时间 -->
+              <property name="maxWait" value="10000"/>
+              <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+              <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+              <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+              <property name="minEvictableIdleTimeMillis" value="300000"/>
+              <property name="testWhileIdle" value="true"/>
+              <!-- 这里建议配置为TRUE，防止取到的连接不可用
+              testOnBorrow：申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+              testOnReturn：归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能 -->
+              <property name="validationQuery" value="select 1"></property>
+              <property name="testOnBorrow" value="true"/>
+              <property name="testOnReturn" value="false"/>
+              <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+              <property name="poolPreparedStatements" value="true"/>
+              <property name="maxPoolPreparedStatementPerConnectionSize"
+                        value="20"/>
+              <!-- 开启Druid的监控统计功能 -->
+              <property name="filters" value="stat"></property>
+          </bean>
+
+          <bean id="dataSource2" class="com.alibaba.druid.pool.DruidDataSource"
+                init-method="init" destroy-method="close">
+              <property name="driverClassName" value="${jdbc.driverClassName1}"/>
+              <property name="url" value="${jdbc.url1}"/>
+              <property name="username" value="${jdbc.username1}"/>
+              <property name="password" value="${jdbc.password1}"/>
+              <!-- 配置初始化大小、最小、最大 -->
+              <property name="initialSize" value="1"/>
+              <property name="minIdle" value="1"/>
+              <property name="maxActive" value="10"/>
+              <!-- 配置获取连接等待超时的时间 -->
+              <property name="maxWait" value="10000"/>
+              <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+              <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+              <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+              <property name="minEvictableIdleTimeMillis" value="300000"/>
+              <property name="testWhileIdle" value="true"/>
+              <!-- 这里建议配置为TRUE，防止取到的连接不可用 -->
+              <property name="validationQuery" value="select 1"></property>
+              <property name="testOnBorrow" value="true"/>
+              <property name="testOnReturn" value="false"/>
+              <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+              <property name="poolPreparedStatements" value="true"/>
+              <property name="maxPoolPreparedStatementPerConnectionSize"
+                        value="20"/>
+              <!-- 开启Druid的监控统计功能 -->
+              <property name="filters" value="stat"></property>
+          </bean>
+
+          <bean id="dataSource3" class="com.alibaba.druid.pool.DruidDataSource"
+                init-method="init" destroy-method="close">
+              <property name="driverClassName" value="${jdbc.driverClassName2}"/>
+              <property name="url" value="${jdbc.url2}"/>
+              <property name="username" value="${jdbc.username2}"/>
+              <property name="password" value="${jdbc.password2}"/>
+              <!-- 配置初始化大小、最小、最大 -->
+              <property name="initialSize" value="1"/>
+              <property name="minIdle" value="1"/>
+              <property name="maxActive" value="10"/>
+              <!-- 配置获取连接等待超时的时间 -->
+              <property name="maxWait" value="10000"/>
+              <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+              <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+              <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+              <property name="minEvictableIdleTimeMillis" value="300000"/>
+              <property name="testWhileIdle" value="true"/>
+              <!-- 这里建议配置为TRUE，防止取到的连接不可用 -->
+              <property name="validationQuery" value="select 1"></property>
+              <property name="testOnBorrow" value="true"/>
+              <property name="testOnReturn" value="false"/>
+              <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+              <property name="poolPreparedStatements" value="true"/>
+              <property name="maxPoolPreparedStatementPerConnectionSize"
+                        value="20"/>
+              <!-- 开启Druid的监控统计功能 -->
+              <property name="filters" value="stat"></property>
+          </bean>
+
+          <bean id="multiDataSource" class="com.wwh.dataSource.MultiDataSource">
+              <property name="defaultTargetDataSource" ref="dataSource"></property>
+              <property name="targetDataSources">
+                  <map>
+                      <entry key="dataSource2" value-ref="dataSource2"></entry>
+                      <entry key="dataSource3" value-ref="dataSource3"></entry>
+                  </map>
+              </property>
+          </bean>
+          <!-- mybatis -->
+          <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+              <property name="dataSource" ref="multiDataSource"></property>
+              <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+              <property name="mapperLocations" value="classpath:com/wwh/mapper/*.xml"></property>
+          </bean>
+          <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+              <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+              <property name="basePackage" value="com.wwh.mapper"></property>
+          </bean>
+
+          <!-- 添加事务管理 -->
+          <tx:annotation-driven transaction-manager="transactionManager"/>
+
+          <bean id="transactionManager"
+                class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+              <property name="dataSource" ref="multiDataSource"></property>
+          </bean>  
+
 #### （必做）读写分离-数据库框架版本2.0
