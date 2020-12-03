@@ -10,10 +10,8 @@
       <change beforePath="$PROJECT_DIR$/../../Week_05/jdbc/src/main/java/com/geek/homework/week5/JdbcPrepareStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/jdbc/src/main/java/com/geek/homework/week5/JdbcPrepareStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_05/jdbc/src/main/java/com/geek/homework/week5/SimpleJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/jdbc/src/main/java/com/geek/homework/week5/SimpleJdbc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dynamic-datasource-springboot/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gensql/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gensql/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" beforeDir="false" />
@@ -209,133 +207,6 @@
               <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
               <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="aop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="dataSource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="dataSource" type="462c0819:PsiDirectoryNode" />
-              <item name="dynamic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -346,7 +217,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607021894648" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607022413697" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dynamic-datasource-springboot" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -463,7 +334,7 @@
       <workItem from="1606923833997" duration="149000" />
       <workItem from="1606926025308" duration="2585000" />
       <workItem from="1606969392868" duration="773000" />
-      <workItem from="1607004772996" duration="3916000" />
+      <workItem from="1607004772996" duration="4432000" />
     </task>
     <servers />
   </component>
@@ -500,7 +371,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21019000" />
+    <option name="totallyTimeSpent" value="21535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />

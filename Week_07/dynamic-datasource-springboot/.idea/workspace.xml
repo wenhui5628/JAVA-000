@@ -11,9 +11,7 @@
       <change beforePath="$PROJECT_DIR$/../../Week_05/jdbc/src/main/java/com/geek/homework/week5/SimpleJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/jdbc/src/main/java/com/geek/homework/week5/SimpleJdbc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dynamic-datasource-spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dynamic-datasource-spring/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gensql/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gensql/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" beforeDir="false" />
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wwh/config/DBProperties.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="39">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="18" selection-end-column="1" />
+              <caret line="9" selection-start-line="9" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -66,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wwh/mapper/UserInfoMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="17" selection-end-column="1" />
+              <caret line="6" selection-start-line="6" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -75,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-425">
-              <caret line="16" column="2" lean-forward="true" selection-end-line="65" />
+              <caret line="16" column="2" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -105,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wwh/config/DataSourceConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
-              <caret line="67" column="1" lean-forward="true" selection-start-line="17" selection-end-line="67" selection-end-column="1" />
+              <caret line="67" column="1" selection-start-line="17" selection-end-line="67" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -180,7 +178,17 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="dynamic-datasource-springboot" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="dynamic-datasource-springboot" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -206,105 +214,6 @@
               <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
               <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="dds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dynamic-datasource-springboot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dynamic-datasource-springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wwh" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -320,7 +229,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607021894732" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607022413767" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../shardingjdbc-dynamic-datasource" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -443,7 +352,7 @@
       <workItem from="1606925463352" duration="78000" />
       <workItem from="1606925679814" duration="254000" />
       <workItem from="1606926045246" duration="3671000" />
-      <workItem from="1607015552853" duration="5136000" />
+      <workItem from="1607015552853" duration="5669000" />
     </task>
     <servers />
   </component>
@@ -480,12 +389,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22756000" />
+    <option name="totallyTimeSpent" value="23289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25383994" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25383994" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -498,7 +407,7 @@
       <window_info anchor="bottom" id="Messages" order="2" weight="0.37366548" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.12455516" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.3594306" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -515,7 +424,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.13823767" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.13823767" />
       <window_info anchor="right" id="SciView" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -664,28 +573,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
-          <caret line="16" column="2" lean-forward="true" selection-end-line="65" />
+          <caret line="16" column="2" selection-end-line="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wwh/config/DBProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="18" selection-end-column="1" />
+          <caret line="9" selection-start-line="9" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wwh/config/DataSourceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="67" column="1" lean-forward="true" selection-start-line="17" selection-end-line="67" selection-end-column="1" />
+          <caret line="67" column="1" selection-start-line="17" selection-end-line="67" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wwh/mapper/UserInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="17" selection-end-column="1" />
+          <caret line="6" selection-start-line="6" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>

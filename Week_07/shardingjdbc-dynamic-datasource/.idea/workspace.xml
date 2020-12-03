@@ -12,25 +12,7 @@
       <change beforePath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_05/spring-bean-create/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dynamic-datasource-spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dynamic-datasource-spring/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dynamic-datasource-springboot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/META-INF/mybatis/mapper/UserInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/annotation/TargetDataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/config/DBProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/config/DataSourceAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/config/DataSourceConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/dds/DynamicDataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/dds/DynamicDataSourceHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/mapper/UserInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/com/wwh/pojo/UserInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/logback-spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/test1_user_info.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/test2_user_info.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/classes/test3_user_info.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dynamic-datasource-springboot/target/test-classes/com/wwh/AppTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gensql/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gensql/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jdbc/src/main/java/com/geek/homework/week5/Test.java" beforeDir="false" />
@@ -323,12 +305,12 @@
       <updated>1606927782305</updated>
       <workItem from="1606927784164" duration="403000" />
       <workItem from="1606928255310" duration="1961000" />
-      <workItem from="1607021125857" duration="768000" />
+      <workItem from="1607021125857" duration="1287000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3132000" />
+    <option name="totallyTimeSpent" value="3651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
