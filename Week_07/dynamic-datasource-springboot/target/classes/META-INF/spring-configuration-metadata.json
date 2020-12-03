@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.wwh.config.DBProperties",
+      "name": "",
+      "type": "com.wwh.config.DBProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.wwh.config.DBProperties",
+      "name": "hikari",
+      "type": "java.util.Map<java.lang.String,com.zaxxer.hikari.HikariDataSource>"
+    },
+    {
+      "sourceType": "com.wwh.config.DBProperties",
+      "name": "hikari",
+      "type": "java.util.Map<java.lang.String,com.zaxxer.hikari.HikariDataSource>"
+    }
+  ]
+}

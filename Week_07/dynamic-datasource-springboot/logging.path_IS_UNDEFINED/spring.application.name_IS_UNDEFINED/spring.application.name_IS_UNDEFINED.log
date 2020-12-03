@@ -1,130 +1,33 @@
-[2020-12-03 00:12:08,311][INFO ] c.comven.example.App[48] - Starting App on LAPTOP-UTMT03GB with PID 64728 (D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot\target\classes started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
-[2020-12-03 00:12:08,331][INFO ] c.comven.example.App[637] - No active profile set, falling back to default profiles: default
-[2020-12-03 00:12:08,399][INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext[582] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3cd3e762: startup date [Thu Dec 03 00:12:08 CST 2020]; root of context hierarchy
-[2020-12-03 00:12:08,614][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
-[2020-12-03 00:12:09,642][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$be34f7b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2020-12-03 00:12:10,160][INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer[89] - Tomcat initialized with port(s): 80 (http)
-[2020-12-03 00:12:10,160][INFO ] o.a.c.c.StandardService[179] - Starting service Tomcat
-[2020-12-03 00:12:10,176][INFO ] o.a.c.c.StandardEngine[179] - Starting Servlet Engine: Apache Tomcat/8.5.11
-[2020-12-03 00:12:10,351][INFO ] o.a.c.c.C.[.[.[/][179] - Initializing Spring embedded WebApplicationContext
-[2020-12-03 00:12:10,351][INFO ] o.s.w.c.ContextLoader[276] - Root WebApplicationContext: initialization completed in 1952 ms
-[2020-12-03 00:12:10,696][INFO ] o.s.b.w.s.ServletRegistrationBean[190] - Mapping servlet: 'dispatcherServlet' to [/]
-[2020-12-03 00:12:10,704][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'characterEncodingFilter' to: [/*]
-[2020-12-03 00:12:10,704][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-[2020-12-03 00:12:10,708][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
-[2020-12-03 00:12:10,708][INFO ] o.s.b.w.s.FilterRegistrationBean[258] - Mapping filter: 'requestContextFilter' to: [/*]
-[2020-12-03 00:12:11,482][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3cd3e762: startup date [Thu Dec 03 00:12:08 CST 2020]; root of context hierarchy
-[2020-12-03 00:12:11,562][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-[2020-12-03 00:12:11,562][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-[2020-12-03 00:12:11,618][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:12:11,618][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:12:11,648][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:12:12,057][INFO ] o.s.j.e.a.AnnotationMBeanExporter[431] - Registering beans for JMX exposure on startup
-[2020-12-03 00:12:12,077][INFO ] o.a.c.h.Http11NioProtocol[179] - Initializing ProtocolHandler ["http-nio-80"]
-[2020-12-03 00:12:12,089][INFO ] o.a.c.h.Http11NioProtocol[179] - Starting ProtocolHandler [http-nio-80]
-[2020-12-03 00:12:12,113][INFO ] o.a.t.u.n.NioSelectorPool[179] - Using a shared selector for servlet write/read
-[2020-12-03 00:12:12,130][INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer[198] - Tomcat started on port(s): 80 (http)
-[2020-12-03 00:12:12,135][INFO ] c.comven.example.App[57] - Started App in 4.406 seconds (JVM running for 8.752)
-[2020-12-03 00:16:20,076][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 61912 (started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
-[2020-12-03 00:16:20,076][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
-[2020-12-03 00:16:20,138][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:16:20 CST 2020]; root of context hierarchy
-[2020-12-03 00:16:20,679][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
-[2020-12-03 00:16:22,697][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1e4d1dcd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2020-12-03 00:16:25,163][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:16:20 CST 2020]; root of context hierarchy
-[2020-12-03 00:16:25,281][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-[2020-12-03 00:16:25,285][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-[2020-12-03 00:16:25,373][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:16:25,373][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:16:25,477][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:16:26,274][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 6.96 seconds (JVM running for 10.136)
-[2020-12-03 00:16:26,398][INFO ] c.z.h.HikariDataSource[93] - master - Started.
-[2020-12-03 00:16:30,385][INFO ] c.c.exmaple.AppTest[29] - 1->=master
-[2020-12-03 00:16:30,386][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
-[2020-12-03 00:16:30,419][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
-[2020-12-03 00:16:30,426][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:16:20 CST 2020]; root of context hierarchy
-[2020-12-03 00:33:09,572][INFO ] c.c.exmaple.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 63672 (started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
-[2020-12-03 00:33:09,576][INFO ] c.c.exmaple.AppTest[637] - No active profile set, falling back to default profiles: default
-[2020-12-03 00:33:09,640][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:33:09 CST 2020]; root of context hierarchy
-[2020-12-03 00:33:10,254][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
-[2020-12-03 00:33:11,941][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16f358b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2020-12-03 00:33:14,393][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:33:09 CST 2020]; root of context hierarchy
-[2020-12-03 00:33:14,564][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-[2020-12-03 00:33:14,564][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-[2020-12-03 00:33:14,665][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:33:14,665][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:33:14,793][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:33:15,464][INFO ] c.c.exmaple.AppTest[57] - Started AppTest in 6.691 seconds (JVM running for 8.398)
-[2020-12-03 00:33:15,656][INFO ] c.z.h.HikariDataSource[93] - master - Started.
-[2020-12-03 00:33:19,254][INFO ] c.c.exmaple.AppTest[29] - 1->=master
-[2020-12-03 00:33:19,254][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
-[2020-12-03 00:33:19,288][INFO ] c.c.exmaple.AppTest[29] - 2->=slave2
-[2020-12-03 00:33:19,296][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:33:09 CST 2020]; root of context hierarchy
-[2020-12-03 00:38:32,221][INFO ] com.wwh.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 69432 (started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
-[2020-12-03 00:38:32,221][INFO ] com.wwh.AppTest[637] - No active profile set, falling back to default profiles: default
-[2020-12-03 00:38:32,269][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:38:32 CST 2020]; root of context hierarchy
-[2020-12-03 00:38:32,734][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
-[2020-12-03 00:38:33,146][WARN ] o.m.s.m.ClassPathMapperScanner[166] - No MyBatis mapper was found in '[com.wwh.mapper]' package. Please check your configuration.
-[2020-12-03 00:38:33,289][WARN ] o.m.s.m.ClassPathMapperScanner[166] - No MyBatis mapper was found in '[com.wwh]' package. Please check your configuration.
-[2020-12-03 00:38:34,780][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$41d5f573] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2020-12-03 00:38:36,571][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:38:32 CST 2020]; root of context hierarchy
-[2020-12-03 00:38:36,747][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-[2020-12-03 00:38:36,747][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-[2020-12-03 00:38:36,851][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:38:36,855][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:38:36,947][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:38:37,971][INFO ] com.wwh.AppTest[57] - Started AppTest in 6.638 seconds (JVM running for 8.739)
-[2020-12-03 00:38:38,045][ERROR] o.s.t.c.TestContextManager[234] - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1a3869f4] to prepare test instance [com.wwh.AppTest@53311681]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.wwh.AppTest': Unsatisfied dependency expressed through field 'userInfoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.wwh.mapper.UserInfoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:386)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.wwh.mapper.UserInfoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1486)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
-	... 28 common frames omitted
-[2020-12-03 00:38:38,089][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:38:32 CST 2020]; root of context hierarchy
-[2020-12-03 00:40:11,696][INFO ] com.wwh.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 70524 (started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
-[2020-12-03 00:40:11,698][INFO ] com.wwh.AppTest[637] - No active profile set, falling back to default profiles: default
-[2020-12-03 00:40:11,767][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:40:11 CST 2020]; root of context hierarchy
-[2020-12-03 00:40:12,186][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
-[2020-12-03 00:40:16,281][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c5293c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2020-12-03 00:40:17,984][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:40:11 CST 2020]; root of context hierarchy
-[2020-12-03 00:40:18,120][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-[2020-12-03 00:40:18,124][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-[2020-12-03 00:40:18,256][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:40:18,256][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:40:18,352][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-[2020-12-03 00:40:18,879][INFO ] com.wwh.AppTest[57] - Started AppTest in 8.008 seconds (JVM running for 10.577)
-[2020-12-03 00:40:19,163][INFO ] c.z.h.HikariDataSource[93] - master - Started.
-[2020-12-03 00:40:19,595][INFO ] com.wwh.AppTest[29] - 1->=master
-[2020-12-03 00:40:19,599][INFO ] c.z.h.HikariDataSource[93] - slave1 - Started.
-[2020-12-03 00:40:19,650][INFO ] com.wwh.AppTest[29] - 2->=slave1
-[2020-12-03 00:40:19,654][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1be2019a: startup date [Thu Dec 03 00:40:11 CST 2020]; root of context hierarchy
+[2020-12-04 02:23:06,198][INFO ] com.wwh.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 114368 (started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
+[2020-12-04 02:23:06,209][INFO ] com.wwh.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-04 02:23:06,321][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@210ab13f: startup date [Fri Dec 04 02:23:06 CST 2020]; root of context hierarchy
+[2020-12-04 02:23:07,127][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-04 02:23:09,561][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2cdf0cd2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-04 02:23:12,418][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@210ab13f: startup date [Fri Dec 04 02:23:06 CST 2020]; root of context hierarchy
+[2020-12-04 02:23:12,632][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-04 02:23:12,635][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-04 02:23:12,735][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-04 02:23:12,736][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-04 02:23:12,917][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-04 02:23:13,634][INFO ] com.wwh.AppTest[57] - Started AppTest in 8.619 seconds (JVM running for 11.662)
+[2020-12-04 02:23:14,031][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-04 02:23:17,651][INFO ] com.wwh.AppTest[29] - 1->=master
+[2020-12-04 02:23:17,653][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
+[2020-12-04 02:23:19,681][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@210ab13f: startup date [Fri Dec 04 02:23:06 CST 2020]; root of context hierarchy
+[2020-12-04 02:25:45,895][INFO ] com.wwh.AppTest[48] - Starting AppTest on LAPTOP-UTMT03GB with PID 116608 (started by wenhu in D:\geek\homework\JAVA-000\Week_07\dynamic-datasource-springboot)
+[2020-12-04 02:25:45,897][INFO ] com.wwh.AppTest[637] - No active profile set, falling back to default profiles: default
+[2020-12-04 02:25:45,979][INFO ] o.s.w.c.s.GenericWebApplicationContext[582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@210ab13f: startup date [Fri Dec 04 02:25:45 CST 2020]; root of context hierarchy
+[2020-12-04 02:25:46,561][INFO ] o.h.v.i.util.Version[30] - HV000001: Hibernate Validator 5.3.4.Final
+[2020-12-04 02:25:48,612][INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[325] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9be40ba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-12-04 02:25:51,479][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerAdapter[534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@210ab13f: startup date [Fri Dec 04 02:25:45 CST 2020]; root of context hierarchy
+[2020-12-04 02:25:51,641][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-12-04 02:25:51,643][INFO ] o.s.w.s.m.m.a.RequestMappingHandlerMapping[543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-12-04 02:25:51,739][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-04 02:25:51,740][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-04 02:25:51,845][INFO ] o.s.w.s.h.SimpleUrlHandlerMapping[362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-12-04 02:25:52,472][INFO ] com.wwh.AppTest[57] - Started AppTest in 7.591 seconds (JVM running for 9.426)
+[2020-12-04 02:25:52,641][INFO ] c.z.h.HikariDataSource[93] - master - Started.
+[2020-12-04 02:25:56,031][INFO ] com.wwh.AppTest[29] - 1->=master
+[2020-12-04 02:25:56,033][INFO ] c.z.h.HikariDataSource[93] - slave2 - Started.
+[2020-12-04 02:25:56,104][INFO ] com.wwh.AppTest[29] - 2->=slave2
+[2020-12-04 02:25:56,111][INFO ] o.s.w.c.s.GenericWebApplicationContext[987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@210ab13f: startup date [Fri Dec 04 02:25:45 CST 2020]; root of context hierarchy

@@ -14,9 +14,6 @@ import java.util.Map;
 @Data
 @ConfigurationProperties(prefix = "")
 public class DBProperties {
-    //	private HikariDataSource master;
-    //	private HikariDataSource slave1;
-    //	private HikariDataSource slave2;
     //一次性从配置文件中读取所有数据源的配置
     private Map<String, HikariDataSource> hikari;
 }
