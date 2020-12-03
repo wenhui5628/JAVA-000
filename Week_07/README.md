@@ -1,5 +1,5 @@
 ### 作业完成情况
-#### （必做）按自己设计的表结构，插入100万订单模拟数据，测试不同方式的插入效率。
+#### 一、（必做）按自己设计的表结构，插入100万订单模拟数据，测试不同方式的插入效率。
 ##### 采用以下几种方式测试插入效率
 ##### 1、用java的Statement方式逐笔插入，代码如下：
       Class.forName("com.mysql.jdbc.Driver");
@@ -140,7 +140,7 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 #### 执行结果如下，可以看到，只使用了25秒即完成了100万笔数据的导入，在试验的所有方法中，效率是最高的：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/load%E5%91%BD%E4%BB%A4%E5%AF%BC%E5%85%A5%E4%B8%80%E7%99%BE%E4%B8%87%E7%AC%94%E6%95%B0%E6%8D%AE.PNG)
 
-#### （必做）读写分离-动态切换数据源版本1.0
+#### 二、（必做）读写分离-动态切换数据源版本1.0
 ####  具体要求如下：
 #### 1、基于 Spring/Spring Boot，配置多个数据源(例如2个，master 和 slave)；
 #### 2、根据具体的 Service 方法是否会操作数据，注入不同的数据源,1.0版本；
@@ -154,7 +154,7 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 #### 1、搭建主从复制环境，这一步是参考老师发的md文件中的步骤完成，主数据库端口使用3306，两个从数据库端口分别使用3316和3326；
 #### 2、分别使用了spring和spring Boot实现了动态切换数据源的效果，spring版本见工程dynamic-datasource-spring，spring Boot版本见工程dynamic-datasource-springboot；
 #### 3、spring版本的数据源配置见spring-mybatis.xml配置文件，spring boot版本数据源配置见application.yml配置文件；
-#### 4、spring版本的切换数据源涉及一下几步操作：
+#### 4、spring版本的切换数据源涉及以下几步操作：
 ##### 1）MultiDataSource.java类，继承AbstractRoutingDataSource，使用到AbstractRoutingDataSource的两个属性defaultTargetDataSource和targetDataSources，defaultTargetDataSource为默认目标数据源，targetDataSources（map类型）存放用来切换的数据源，配置完以后，其他地方用到数据源的话，都引用multiDataSource，MultiDataSource的代码如下：
       package com.wwh.dataSource;
 
@@ -309,5 +309,330 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
                 class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
               <property name="dataSource" ref="multiDataSource"></property>
           </bean>  
+          
+##### 3)切换数据源时，可以通过操作MultiDataSource类的setDataSourceKey方法对数据源进行手动切换，见代码TestDynamicDataSource中的test方法，如下：
+        Cost cost = new Cost(111);
+        costService.insert(cost);
+        MultiDataSource.setDataSourceKey("dataSource2");
+        cost.setMoney(222);
+        costService.insert(cost);
+        MultiDataSource.toDefault();
+        cost.setMoney(333);
+        costService.insert(cost);
+##### 这段代码先是使用了默认数据源插入了一笔金额为111的记录，再通过 MultiDataSource.setDataSourceKey("dataSource2")方法将数据源切换到dataSource2 从数据源插入了一笔金额为222的记录，最后再通过MultiDataSource.toDefault()方法将数据源设置为默认数据源并插入一笔金额为333的记录，从而实现数据源的切换；
 
-#### （必做）读写分离-数据库框架版本2.0
+##### 4)对于切换数据源，工程中还有另外一种方式，即通过自定义注解的方式实现数据源的切换，这里定义了DynamicRoutingDataSource这个注解用来切换数据源，代码如下：
+      package com.wwh.annotation;
+
+      import java.lang.annotation.Documented;
+      import java.lang.annotation.ElementType;
+      import java.lang.annotation.Inherited;
+      import java.lang.annotation.Retention;
+      import java.lang.annotation.RetentionPolicy;
+      import java.lang.annotation.Target;
+
+      @Target({ElementType.METHOD,ElementType.TYPE})
+      @Retention(RetentionPolicy.RUNTIME)
+      @Documented
+      @Inherited
+      public @interface DynamicRoutingDataSource {
+
+            String value() default "dataSource";
+
+      }
+      
+##### 这个注解需要配置切面使用，所以编写了一个切面HandlerDataSourceAop.java，使用@Before和@After，在调用目标方法前，进行aop拦截，通过解析注解上的值来切换数据源。在调用方法结束后，切回默认数据源,代码如下：
+      package com.wwh.aop;
+
+      import java.lang.reflect.Method;
+
+      import org.aspectj.lang.JoinPoint;
+      import org.aspectj.lang.annotation.After;
+      import org.aspectj.lang.annotation.Aspect;
+      import org.aspectj.lang.annotation.Before;
+      import org.aspectj.lang.annotation.Pointcut;
+      import org.springframework.stereotype.Component;
+
+      import com.wwh.annotation.DynamicRoutingDataSource;
+      import com.wwh.dataSource.MultiDataSource;
+
+      @Aspect
+      @Component
+      public class HandlerDataSourceAop {
+
+            /**
+             * @within匹配类上的注解
+             * @annotation匹配方法上的注解
+             */
+            @Pointcut("@within(com.wwh.annotation.DynamicRoutingDataSource)||@annotation(com.wwh.annotation.DynamicRoutingDataSource)")
+            public void pointcut() {
+            }
+
+            @Before(value = "pointcut()")
+            public void beforeOpt(JoinPoint joinPoint) {
+                  // 反射获取Method
+                  Object target = joinPoint.getTarget();
+                  Class<?> clazz = target.getClass();
+                  Method[] methods = clazz.getMethods();
+                  DynamicRoutingDataSource annotation = null;
+                  for (Method method : methods) {
+                        if (joinPoint.getSignature().getName().equals(method.getName())) {
+                              annotation = method.getAnnotation(DynamicRoutingDataSource.class);
+                              if (annotation == null) {
+                                    annotation = joinPoint.getTarget().getClass().getAnnotation(DynamicRoutingDataSource.class);
+                                    if (annotation == null) {
+                                          return;
+                                    }
+                              }
+                        }
+                  }
+                  String dataSourceName = annotation.value();
+                  MultiDataSource.setDataSourceKey(dataSourceName);
+                  System.out.println("切到" + dataSourceName + "数据库");
+            }
+
+            @After(value = "pointcut()")
+            public void afterOpt() {
+                  MultiDataSource.toDefault();
+                  System.out.println("切回默认数据库");
+            }
+      }
+
+##### 使用这个自定义注解切换数据源只需要把@DynamicRoutingDataSource注解加到方法或者类上即可，见TestDynamicDataSource.java的test2和test3方法
+
+##### 5、spring boot版本的切换数据源主要采用的是自定义注解的方式实现，主要涉及以下几步：
+##### 1）配置文件，主要的配置文件application.yml的配置如下：
+      #应用配置
+      spring:
+        application:
+          name: dynamic-datasource-springboot
+      server:
+        port: 80
+      #日志配置
+      logging:
+        path: logs
+        config: classpath:logback-spring.xml
+        level:
+          com:
+            wwh:
+              mapper: info
+      #主数据源配置
+      hikari:
+        master:
+          jdbc-url: jdbc:mysql://127.0.0.1:3306/db?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+          username: root
+          password:
+          maximum-pool-size: 10
+          pool-name: master
+          connection-timeout: 30000
+          idle-timeout: 600000
+          max-lifetime: 1765000
+          data-source-properties:
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
+            useServerPrepStmts: true
+            useLocalSessionState: true
+            useLocalTransactionState: true
+            rewriteBatchedStatements: true
+            cacheResultSetMetadata: true
+            cacheServerConfiguration: true
+            elideSetAutoCommits: true
+            maintainTimeStats: false
+        #从数据源1配置
+        slave1:
+          jdbc-url: jdbc:mysql://127.0.0.1:3316/db?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+          username: root
+          password:
+          maximum-pool-size: 10
+          pool-name: slave1
+          connection-timeout: 30000
+          idle-timeout: 600000
+          max-lifetime: 1765000
+          read-only: true
+        slave2:
+          jdbc-url: jdbc:mysql://127.0.0.1:3326/db?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+          username: root
+          password:
+          maximum-pool-size: 10
+          pool-name: slave2
+          connection-timeout: 30000
+          idle-timeout: 600000
+          max-lifetime: 1765000
+          read-only: true
+      #从数据库路由规则配置
+      slave:
+        hosts: slave1,slave2
+      #mybatis配置
+      mybatis:
+        type-aliases-package: com.wwh.pojo
+        mapper-locations: classpath:/META-INF/mybatis/mapper/*.xml
+
+##### 2）创建DynamicDataSource.java，继承AbstractRoutingDataSource，用于动态指定数据源类，代码如下:
+      /**
+       * 动态数据源实现类
+       */
+      @Slf4j
+      public class DynamicDataSource extends AbstractRoutingDataSource{
+            //数据源路由，此方用于产生要选取的数据源逻辑名称
+            @Override
+            protected Object determineCurrentLookupKey() {
+                  //从共享线程中获取数据源名称
+                  return DynamicDataSourceHolder.getDataSource();
+            }
+      }
+      
+##### 3)创建数据源切换方法注解TargetDataSource,当AOP检测到方法上有该注解时，根据注解中value对应的名称进行切换，如下：      
+      /**
+       * 目标数据源注解，注解在方法上指定数据源的名称
+       */
+      @Retention(RetentionPolicy.RUNTIME)
+      @Target(ElementType.METHOD)
+      public @interface TargetDataSource {
+            String value();//此处接收的是数据源的名称
+      }
+
+##### 4)定义处理AOP切面DataSourceAspect.java,在切面前做数据源切换，切面完成后移除数据源名称，多个从数据源的负载均衡算法在slaveLoadBalance方法中实现，代码如下：
+      /**
+       * 数据源AOP切面定义
+       */
+      @Component
+      @Aspect
+      @Slf4j
+      public class DataSourceAspect {
+            @Value("${slave.hosts}")
+            private String slaveHosts;
+
+            //切换放在mapper接口的方法上，所以这里要配置AOP切面的切入点
+            @Pointcut("execution( * com.wwh.mapper.*.*(..))")
+            public void dataSourcePointCut() {
+            }
+
+            @Before("dataSourcePointCut()")
+            public void before(JoinPoint joinPoint) {
+                  Object target = joinPoint.getTarget();
+                  String method = joinPoint.getSignature().getName();
+                  Class<?>[] clazz = target.getClass().getInterfaces();
+                  Class<?>[] parameterTypes = ((MethodSignature) joinPoint.getSignature()).getMethod().getParameterTypes();
+                  try {
+                        Method m = clazz[0].getMethod(method, parameterTypes);
+                        //如果方法上存在切换数据源的注解，则根据注解内容进行数据源切换
+                        if (m != null && m.isAnnotationPresent(TargetDataSource.class)) {
+                              TargetDataSource data = m.getAnnotation(TargetDataSource.class);
+                              String dataSourceName = data.value();
+                              //判断指定的数据源类型，如果是slave，则调用负载均衡方法，随机分配slave数据库
+                              if (dataSourceName.equals("slave")){
+                                    dataSourceName = slaveLoadBalance();
+                              }
+                              DynamicDataSourceHolder.putDataSource(dataSourceName);
+                              log.debug("current thread " + Thread.currentThread().getName() + " add " + dataSourceName + " to ThreadLocal");
+                        } else {
+                              log.debug("switch datasource fail,use default");
+                        }
+                  } catch (Exception e) {
+                        log.error("current thread " + Thread.currentThread().getName() + " add data to ThreadLocal error", e);
+                  }
+            }
+
+            //执行完切面后，将线程共享中的数据源名称清空
+            @After("dataSourcePointCut()")
+            public void after(JoinPoint joinPoint){
+                  DynamicDataSourceHolder.removeDataSource();
+            }
+
+            //自己实现的随机指定slave数据源的简单的负载均衡算法
+            private  String slaveLoadBalance() {
+                  String[] slaves = slaveHosts.split(",");
+                  //通过随机获取数组中数据库的名称来随机分配要使用的数据库
+                  int num = new Random().nextInt(slaves.length);
+                  return slaves[num];
+            }
+      }
+      
+##### 5)定义数据源配置类DBProperties.java，代码如下：
+      /**
+       * 实际数据源配置
+       */
+      @Component
+      @Data
+      @ConfigurationProperties(prefix = "")
+      public class DBProperties {
+          //一次性从配置文件中读取所有数据源的配置
+          private Map<String, HikariDataSource> hikari;
+      }
+      
+##### 6）在DataSourceConfig.java中采用@Bean注解完成动态数据源对象的申明，代码如下：
+      /**
+       * 数据源配置
+       */
+      @Configuration
+      @EnableScheduling
+      @Slf4j
+      public class DataSourceConfig {
+
+            @Autowired
+            private DBProperties properties;
+
+            private static final String KEY_MASTER = "master";
+
+            @Bean(name = "dataSource")
+            public DataSource dataSource() {
+                  //按照目标数据源名称和目标数据源对象的映射存放在Map中
+                  Map<Object, Object> targetDataSources = new HashMap<>();
+                  //获取配置文件中的数据源
+                  Map<String, HikariDataSource> hikaris = properties.getHikari();
+                  Set<String> keys = hikaris.keySet();
+                  HikariDataSource hikariDataSource = null;
+                  HikariDataSource masterDB = null;
+                  String poolName = "";
+                  for (String key : keys){
+                        hikariDataSource = hikaris.get(key);
+                        poolName = hikariDataSource.getPoolName();
+                        targetDataSources.put(hikariDataSource.getPoolName(),hikariDataSource);
+                        if (poolName.equals(KEY_MASTER)){
+                              masterDB = hikariDataSource;
+                        }
+                  }
+
+                  //采用AbstractRoutingDataSource的对象包装多数据源
+                  DynamicDataSource dataSource = new DynamicDataSource();
+                  dataSource.setTargetDataSources(targetDataSources);
+                  //设置默认的数据源，当拿不到数据源时，使用此配置
+                  if (null != masterDB){
+                        dataSource.setDefaultTargetDataSource(masterDB);
+                  }else {
+                        log.error("Can't find master db, project will be exit");
+                        System.exit(0);
+                  }
+                  return dataSource;
+            }
+
+            @Bean
+            public PlatformTransactionManager txManager() {
+                  return new DataSourceTransactionManager(dataSource());
+            }
+
+      }
+      
+##### 7、在mapper接口方法上做切换，见UserInfoMapper.java，代码如下：
+      public interface UserInfoMapper {
+            /**
+             * 从master数据源中获取用户信息
+             */
+            //@TargetDataSource("master")
+            UserInfo selectByOddUserId(Integer id);
+            /**
+             * 从slave数据源中获取用户信息
+             */
+            @TargetDataSource("slave")
+            UserInfo selectByEvenUserId(Integer id);
+      }
+      
+##### 8、通过junit，运行AppTest结果如下，可以看到，调用了两次mapper的方法，一个使用了主数据源master，另一个根据负载均衡算法使用到了第二个从数据源slave2，如下图所示：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A2%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9Cspringboot.PNG)
+
+#### 三、（必做）读写分离-数据库框架版本2.0，使用ShardingSphere-jdbc 的 Master-Slave 功能，实现 1）SQL 解析和事务管理，自动实现读写分离 2）解决”写完读”不一致的问题
+##### 实现如下效果图：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A22.png)
+
+##### 见工程shardingjdbc-dynamic-datasource
