@@ -141,4 +141,13 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/load%E5%91%BD%E4%BB%A4%E5%AF%BC%E5%85%A5%E4%B8%80%E7%99%BE%E4%B8%87%E7%AC%94%E6%95%B0%E6%8D%AE.PNG)
 
 #### （必做）读写分离-动态切换数据源版本1.0
+####  具体要求如下：
+#### 1、基于 Spring/Spring Boot，配置多个数据源(例如2个，master 和 slave)；
+#### 2、根据具体的 Service 方法是否会操作数据，注入不同的数据源,1.0版本；
+#### 3、改进一下1.1：基于操作 AbstractRoutingDataSource 和自定义注解 readOnly 之类的，简化自动切换数据源；
+#### 4、改进二下1.2：支持配置多个从库；
+#### 5、改进三下1.3：支持多个从库的负载均衡。
+#### 实现的效果图如下，根据具体的业务类型，动态切换数据源，如增删改这些请求使用主库，查询请求使用从库
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A21.png)
+
 #### （必做）读写分离-数据库框架版本2.0
