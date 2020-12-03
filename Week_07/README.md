@@ -154,7 +154,7 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 #### 1、搭建主从复制环境，这一步是参考老师发的md文件中的步骤完成，主数据库端口使用3306，两个从数据库端口分别使用3316和3326；
 #### 2、分别使用了spring和spring Boot实现了动态切换数据源的效果，spring版本见工程dynamic-datasource-spring，spring Boot版本见工程dynamic-datasource-springboot；
 #### 3、spring版本的数据源配置见spring-mybatis.xml配置文件，spring boot版本数据源配置见application.yml配置文件；
-#### 4、spring版本的切换数据源涉及一下几步操作：
+#### 4、spring版本的切换数据源涉及以下几步操作：
 ##### 1）MultiDataSource.java类，继承AbstractRoutingDataSource，使用到AbstractRoutingDataSource的两个属性defaultTargetDataSource和targetDataSources，defaultTargetDataSource为默认目标数据源，targetDataSources（map类型）存放用来切换的数据源，配置完以后，其他地方用到数据源的话，都引用multiDataSource，MultiDataSource的代码如下：
       package com.wwh.dataSource;
 
