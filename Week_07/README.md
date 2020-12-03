@@ -34,7 +34,7 @@
             }
             System.out.println("PrepareStatement单笔提交方式导入数据结束,使用时间："+ (System.currentTimeMillis()-start) + " ms");
             
- #### 执行结果如下，大概使用了104分钟，看起来和PreparedStatement单笔执行比较，效率上并没有提升：
+ #### 执行结果如下，大概使用了104分钟，看起来和Statement单笔执行比较，效率上并没有提升：
  ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/java-prepareStatement%E5%AF%BC%E5%85%A5%E4%B8%80%E7%99%BE%E4%B8%87%E6%95%B0%E6%8D%AE(%E4%B8%8D%E5%88%86%E6%89%B9).PNG)
  
  #### 3、用java的PreparedStatement结合addBatch方法分批执行，每5万笔提交一次，代码如下：
