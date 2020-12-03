@@ -1,5 +1,5 @@
 ### 作业完成情况
-#### （必做）按自己设计的表结构，插入100万订单模拟数据，测试不同方式的插入效率。
+#### 一、（必做）按自己设计的表结构，插入100万订单模拟数据，测试不同方式的插入效率。
 ##### 采用以下几种方式测试插入效率
 ##### 1、用java的Statement方式逐笔插入，代码如下：
       Class.forName("com.mysql.jdbc.Driver");
@@ -140,7 +140,7 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 #### 执行结果如下，可以看到，只使用了25秒即完成了100万笔数据的导入，在试验的所有方法中，效率是最高的：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/load%E5%91%BD%E4%BB%A4%E5%AF%BC%E5%85%A5%E4%B8%80%E7%99%BE%E4%B8%87%E7%AC%94%E6%95%B0%E6%8D%AE.PNG)
 
-#### （必做）读写分离-动态切换数据源版本1.0
+#### 二、（必做）读写分离-动态切换数据源版本1.0
 ####  具体要求如下：
 #### 1、基于 Spring/Spring Boot，配置多个数据源(例如2个，master 和 slave)；
 #### 2、根据具体的 Service 方法是否会操作数据，注入不同的数据源,1.0版本；
@@ -631,4 +631,4 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 ##### 8、通过junit，运行AppTest结果如下，可以看到，调用了两次mapper的方法，一个使用了主数据源master，另一个根据负载均衡算法使用到了第二个从数据源slave2，如下图所示：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A2%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9Cspringboot.PNG)
 
-#### （必做）读写分离-数据库框架版本2.0
+#### 三、（必做）读写分离-数据库框架版本2.0
