@@ -631,4 +631,8 @@ LOAD DATA LOCAL INFILE 'D:/batchInsert.sql' INTO TABLE order_master;
 ##### 8、通过junit，运行AppTest结果如下，可以看到，调用了两次mapper的方法，一个使用了主数据源master，另一个根据负载均衡算法使用到了第二个从数据源slave2，如下图所示：
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A2%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9Cspringboot.PNG)
 
-#### 三、（必做）读写分离-数据库框架版本2.0
+#### 三、（必做）读写分离-数据库框架版本2.0，使用ShardingSphere-jdbc 的 Master-Slave 功能，实现 1）SQL 解析和事务管理，自动实现读写分离 2）解决”写完读”不一致的问题
+##### 实现如下效果图：
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_07/img/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%87%E6%8D%A22.png)
+
+##### 见工程shardingjdbc-dynamic-datasource
