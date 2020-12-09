@@ -19,9 +19,9 @@ create database demo_ds_1;
 - 1.下载[ShardingSphere-Proxy](https://www.apache.org/dyn/closer.cgi/shardingsphere/5.0.0-alpha/apache-shardingsphere-5.0.0-alpha-shardingsphere-proxy-bin.tar.gz)，下载完成后放到自己相应的目录下
 - 2.下载[MySQL-connect.jar](https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar),下载完成后将jar文件放到Sharding根目录的lib目录下
 
-&ensp;&ensp;&ensp;&ensp;需要配置两个文件：server.yaml、config-sharding.yaml
+需要配置两个文件：server.yaml、config-sharding.yaml
 
-&ensp;&ensp;&ensp;&ensp;server.yaml
+server.yaml
 
 ```yaml
 #
@@ -83,7 +83,7 @@ props:
   check-table-metadata-enabled: false
 ```
 
-&ensp;&ensp;&ensp;&ensp;config-sharding.yaml
+config-sharding.yaml
 
 ```yaml
 ######################################################################################################
@@ -134,14 +134,14 @@ rules:
         algorithm-expression: t_order_${order_id % 16}
 ```
 
-&ensp;&ensp;&ensp;&ensp;接下来启动sharding，直接进入sharding的根目录下的bin目录中运行：start.bat即可
+接下来启动sharding，直接进入sharding的根目录下的bin目录中运行：start.bat即可
 
 ```shell script
 # 使用命令行运行可以指定运行端口
 ./start.bat 13306
 ```
 
-&ensp;&ensp;&ensp;&ensp;使用mysql命令或者mysqlworkbench连接上sharding，运行下面的SQL语句生成测试的表，运行成功看到日志中一大批SQL语句，
+使用mysql命令或者mysqlworkbench连接上sharding，运行下面的SQL语句生成测试的表，运行成功看到日志中一大批SQL语句，
 
 ```sql
 CREATE TABLE IF NOT EXISTS `t_order` (
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `t_order` (
 ```
 
 ### SpringBoot Mybatis配置
-&ensp;&ensp;&ensp;&ensp;需要修改数据库连接配置，大致如下：
+需要修改数据库连接配置，大致如下：
 
 ```properties
 # mybatis的config文件位置配置
@@ -169,7 +169,7 @@ spring.datasource.password=
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
-&ensp;&ensp;&ensp;&ensp;运行测试类进行测试，代码如下：
+运行测试类进行测试，代码如下：
 
 ```java
 package com.wwh.test.mappers;

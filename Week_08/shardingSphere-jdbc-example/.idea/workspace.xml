@@ -14,8 +14,8 @@
         <entry file="file://$PROJECT_DIR$/transaction-example/transaction-2pc-xa-raw-jdbc-example/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="50">
-                <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <first_editor relative-caret-position="225">
+                <caret line="135" selection-start-line="135" selection-end-line="135" />
                 <folding>
                   <element signature="imports" expanded="true" />
                 </folding>
@@ -109,12 +109,12 @@
       <option name="presentableId" value="Default" />
       <updated>1607489016370</updated>
       <workItem from="1607489018981" duration="1175000" />
-      <workItem from="1607517369168" duration="1061000" />
+      <workItem from="1607517369168" duration="1245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2236000" />
+    <option name="totallyTimeSpent" value="2420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -192,8 +192,8 @@
     <entry file="file://$PROJECT_DIR$/transaction-example/transaction-2pc-xa-raw-jdbc-example/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="50">
-            <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <first_editor relative-caret-position="225">
+            <caret line="135" selection-start-line="135" selection-end-line="135" />
             <folding>
               <element signature="imports" expanded="true" />
             </folding>

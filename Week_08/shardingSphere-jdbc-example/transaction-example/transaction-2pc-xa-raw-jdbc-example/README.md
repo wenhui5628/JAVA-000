@@ -1,5 +1,5 @@
 ## 作业
-&ensp;&ensp;&ensp;&ensp;基于hmily TCC或ShardingSphere的Atomikos XA实现一个简单的分布式事务应用demo（二选一），提交到github  
+基于hmily TCC或ShardingSphere的Atomikos XA实现一个简单的分布式事务应用demo（二选一），提交到github  
 项目工程在：[链接](.)*
 
 ### 环境配置
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS t_order_1 (order_id BIGINT NOT NULL, user_id INT NOT 
 
 ### 程序配置
 #### Maven依赖
-&ensp;&ensp;&ensp;&ensp;核心依赖下面几个：
+核心依赖下面几个：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS t_order_1 (order_id BIGINT NOT NULL, user_id INT NOT 
 ```
 
 ### shardingSphere数据库配置文件
-&ensp;&ensp;&ensp;&ensp;如上面的数据库配置，这里设置了两个数据库，各自有两张表
+如上面的数据库配置，这里设置了两个数据库，各自有两张表
 
 ```yaml
 dataSources:
@@ -133,7 +133,7 @@ props:
 ```
 
 ### 主程序
-&ensp;&ensp;&ensp;&ensp;测试代码如下：
+测试代码如下：
 
 ```java
 package com.example.demo;
