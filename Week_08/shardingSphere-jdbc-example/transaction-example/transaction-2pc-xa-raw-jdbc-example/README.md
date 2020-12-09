@@ -1,6 +1,6 @@
 ## 作业
-&ensp;&ensp;&ensp;&ensp;基于hmily TCC或ShardingSphere的Atomikos XA实现一个简单的分布式事务应用demo（二选一），提交到github
-*项目工程在：[链接](.)*
+&ensp;&ensp;&ensp;&ensp;基于hmily TCC或ShardingSphere的Atomikos XA实现一个简单的分布式事务应用demo（二选一），提交到github  
+项目工程在：[链接](.)*
 
 ### 环境配置
 ```shell script
