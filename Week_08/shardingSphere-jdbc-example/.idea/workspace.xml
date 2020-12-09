@@ -14,8 +14,7 @@
         <entry file="file://$PROJECT_DIR$/transaction-example/transaction-2pc-xa-raw-jdbc-example/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="250">
-                <caret line="223" column="43" lean-forward="true" selection-start-line="223" selection-start-column="43" selection-end-line="223" selection-end-column="43" />
+              <first_editor>
                 <folding>
                   <element signature="imports" expanded="true" />
                 </folding>
@@ -109,18 +108,18 @@
       <option name="presentableId" value="Default" />
       <updated>1607489016370</updated>
       <workItem from="1607489018981" duration="1175000" />
-      <workItem from="1607517369168" duration="524000" />
+      <workItem from="1607517369168" duration="857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1699000" />
+    <option name="totallyTimeSpent" value="2032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13985449" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14955537" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -192,8 +191,7 @@
     <entry file="file://$PROJECT_DIR$/transaction-example/transaction-2pc-xa-raw-jdbc-example/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="250">
-            <caret line="223" column="43" lean-forward="true" selection-start-line="223" selection-start-column="43" selection-end-line="223" selection-end-column="43" />
+          <first_editor>
             <folding>
               <element signature="imports" expanded="true" />
             </folding>
