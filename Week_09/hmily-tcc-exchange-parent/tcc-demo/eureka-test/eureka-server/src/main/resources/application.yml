@@ -1,0 +1,9 @@
+server:
+  port: 56080
+eureka:
+  instance:
+    hostname: eureka-server
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:56080/eureka
+    register-with-eureka: false
