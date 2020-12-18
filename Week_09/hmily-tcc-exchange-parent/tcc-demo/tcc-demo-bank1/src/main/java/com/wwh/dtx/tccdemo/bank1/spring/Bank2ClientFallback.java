@@ -10,12 +10,6 @@ import org.springframework.stereotype.Component;
 public class Bank2ClientFallback implements Bank2Client {
 
     @Override
-    public Boolean transfer(Double amount) {
-
-        return false;
-    }
-
-    @Override
     public Boolean exchangeTrading(String buyAccountNo, String buyCcy, String sellAccountNo, String sellCcy, Double buyAmount, Double sellAmount) {
         return false;
     }

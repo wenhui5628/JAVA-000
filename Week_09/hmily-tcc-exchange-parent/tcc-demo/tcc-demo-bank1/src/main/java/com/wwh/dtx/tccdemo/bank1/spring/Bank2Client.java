@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(value="tcc-demo-bank2",fallback=Bank2ClientFallback.class)
 public interface Bank2Client {
-    //远程调用李四的微服务
-    @GetMapping("/bank2/transfer")
-    @Hmily
-    public  Boolean transfer(@RequestParam("amount") Double amount);
-
     //远程调用B账户的外汇买卖微服务
     @GetMapping("/bank2/exchangeTrading")
     @Hmily

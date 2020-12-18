@@ -26,14 +26,6 @@ public class AccountInfoServiceImpl implements AccountInfoService {
     @Autowired
     AccountFreezeInfoDao accountFreezeInfoDao;
 
-    @Override
-    @Hmily(confirmMethod="confirmMethod", cancelMethod="cancelMethod")
-    public void updateAccountBalance(String accountNo, Double amount) {
-        //获取全局事务id
-        String transId = HmilyTransactionContextLocal.getInstance().get().getTransId();
-        log.info("bank2 try begin 开始执行...xid:{}",transId);
-    }
-
     /***
      * 针对不同币种的账户扣减金额或者增加金额
      * @param buyAccountNo  买入账户，比如用1美元换7人民币，则这里就是7人民币对应的账号
@@ -58,7 +50,7 @@ public class AccountInfoServiceImpl implements AccountInfoService {
         int result = accountInfoDao.subtractAccountBalanceByCcy(sellAccount,sellAmount,sellCcy);
         if(result <= 0){
             //扣减金额失败
-            throw new RuntimeException("bank1 try 扣减金额失败,xid:{}"+transId);
+            throw new RuntimeException("bank2 try 扣减金额失败,xid:{}"+transId);
         }
     }
 
@@ -67,46 +59,11 @@ public class AccountInfoServiceImpl implements AccountInfoService {
     public void commitTrade(String buyAccountNo, String buyCcy, String sellAccount, String sellCcy, Double buyAmount, Double sellAmount){
         //获取全局事务id
         String transId = HmilyTransactionContextLocal.getInstance().get().getTransId();
-        log.info("bank1 confirm begin 开始执行...xid:{},buyAccountNo:{},buyAmount:{},buyCcy:{}",transId,buyAccountNo,buyAmount,buyCcy);
+        log.info("bank2 confirm begin 开始执行...xid:{},buyAccountNo:{},buyAmount:{},buyCcy:{}",transId,buyAccountNo,buyAmount,buyCcy);
         //步骤1：将买方账户余额加上相应金额
         accountInfoDao.addAccountBalanceByCcy(buyAccountNo,buyAmount,buyCcy);
         //步骤2：删除冻结记录
         accountFreezeInfoDao.deleteFreezeInfo(sellAccount,sellAmount);
-    }
-
-    /**
-     * confirm方法
-     * 	confirm幂等校验
-     * 	正式增加金额
-     * @param accountNo
-     * @param amount
-     */
-    @Transactional
-    public void confirmMethod(String accountNo, Double amount){
-        //获取全局事务id
-        String transId = HmilyTransactionContextLocal.getInstance().get().getTransId();
-        log.info("bank2 confirm begin 开始执行...xid:{}",transId);
-        if(accountInfoDao.isExistConfirm(transId)>0){
-            log.info("bank2 confirm 已经执行，无需重复执行...xid:{}",transId);
-            return ;
-        }
-        //增加金额
-        accountInfoDao.addAccountBalance(accountNo,amount);
-        //增加一条confirm日志，用于幂等
-        accountInfoDao.addConfirm(transId);
-        log.info("bank2 confirm end 结束执行...xid:{}",transId);
-    }
-
-
-
-    /**
-     * @param accountNo
-     * @param amount
-     */
-    public void cancelMethod(String accountNo, Double amount){
-        //获取全局事务id
-        String transId = HmilyTransactionContextLocal.getInstance().get().getTransId();
-        log.info("bank2 cancel begin 开始执行...xid:{}",transId);
     }
 
     /***

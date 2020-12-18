@@ -5,9 +5,6 @@ package com.wwh.dtx.tccdemo.bank2.service;
  */
 public interface AccountInfoService {
 
-    //账户扣款
-    public  void updateAccountBalance(String accountNo, Double amount);
-
     /***
      * 外汇买卖交易，针对不同币种的账户扣减金额或者增加金额
      * @param buyAccountNo  买入账户，比如用1美元换7人民币，则这里就是7人民币对应的账号

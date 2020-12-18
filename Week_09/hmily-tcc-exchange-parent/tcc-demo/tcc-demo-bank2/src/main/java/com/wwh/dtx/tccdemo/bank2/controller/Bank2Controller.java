@@ -15,12 +15,6 @@ public class Bank2Controller {
     @Autowired
     AccountInfoService accountInfoService;
 
-    @RequestMapping("/transfer")
-    public Boolean transfer(@RequestParam("amount") Double amount) {
-        this.accountInfoService.updateAccountBalance("2", amount);
-        return true;
-    }
-
     /***
      * 3、（必做）结合dubbo+hmily，实现一个TCC外汇交易处理，代码提交到github：
      * 1）用户A的美元账户和人民币账户都在A库，使用1美元兑换7人民币；
