@@ -57,7 +57,28 @@ CREATE TABLE `account_freeze_info` (
   `freeze_amount` double DEFAULT NULL COMMENT '冻结金额',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
-
 ````
+#### 以tcc-demo-bank1为例介绍一下工程的代码结构
+```properties 1
+Bank1TccServer为服务启动入口程序
+Bank1Controller为请求访问入口程序
+AccountInfoDao和AccountFreezeInfoDao分别是账户信息表和冻结账户信息持久化对象
+AccountInfoServiceImpl为外汇交易业务实现类
 
+业务处理处理一共有三部，分别是try,confirm和cancel
+下面以这个业务场景介绍代码的处理：
+1）用户A的美元账户和人民币账户都在A库，使用1美元兑换7人民币；
+2）用户B的美元账户和人民币账户都在B库，使用7人民币兑换1美元；
+
+在try那一步做了以下操作：
+1.针对A的美元账户生成一笔冻结记录；
+2.将A的美元账户的账户余额减1；
+3.调用微服务tcc-demo-bank2，执行B账户的人民币兑换美元操作
+
+在confirm那一步做了以下操作：
+1.将A账户的人民币账户的账户余额加7；
+2.删除在try那一步生成的冻结记录;
+
+在cancel那一步做了以下操作：
+当出现异常时，会调用此方法进行回滚
+```
