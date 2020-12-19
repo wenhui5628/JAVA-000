@@ -164,7 +164,7 @@ if(!response.isStatus()){    //为true表示处理成功,为false表示处理失
 
 #### 3）尝试使用Netty+HTTP作为client端传输方式
 见rpcfx-demo-consumer的NettyClient.java和NettyClientHandler.java
-这是需要注意的点是构造FullHttpRequest请求对象时，要将请求设置成POST模式，并且请求头需要指定报文格式为json报文，如下：
+这里需要注意的点是构造FullHttpRequest请求对象时，要将请求设置成POST模式，并且请求头需要指定报文格式为json报文，如下：
 ```java
         //配置HttpRequest的请求数据和一些配置信息
         FullHttpRequest request = new DefaultFullHttpRequest(
