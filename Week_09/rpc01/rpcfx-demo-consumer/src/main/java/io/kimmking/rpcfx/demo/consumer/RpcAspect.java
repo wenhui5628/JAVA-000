@@ -3,8 +3,6 @@ package io.kimmking.rpcfx.demo.consumer;
 import com.alibaba.fastjson.JSON;
 import io.kimmking.rpcfx.api.RpcfxRequest;
 import io.kimmking.rpcfx.api.RpcfxResponse;
-import io.kimmking.rpcfx.demo.api.User;
-import io.kimmking.rpcfx.demo.api.UserService;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
