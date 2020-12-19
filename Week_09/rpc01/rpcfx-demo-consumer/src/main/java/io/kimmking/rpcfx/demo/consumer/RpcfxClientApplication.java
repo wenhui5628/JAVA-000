@@ -23,7 +23,6 @@ public class RpcfxClientApplication {
 		UserService userService = applicationContext.getBean("userService", UserService.class);
 		User user = userService.findById(1);
 		System.out.println("find user id=1 from server: " + user.getName());
-		System.out.println("end...");
 		// UserService service = new xxx();
 		// service.findById
 //		UserService userService = Rpcfx.create(UserService.class, "http://localhost:8080/");

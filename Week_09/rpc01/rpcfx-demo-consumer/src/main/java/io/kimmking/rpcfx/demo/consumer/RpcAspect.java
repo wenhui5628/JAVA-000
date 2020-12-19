@@ -30,7 +30,7 @@ public class RpcAspect {
 
     @Around("execute()")
     public Object doAround(ProceedingJoinPoint joinpoint) {
-        System.out.println("进入切面...");
+        System.out.println("======进入Rpc客戶端切面");
         try {
             RpcfxRequest request = new RpcfxRequest();
             Signature sig = joinpoint.getSignature();
@@ -48,15 +48,15 @@ public class RpcAspect {
             //通过joinPoint.getArgs()获取Args参数
             Object[] params = joinpoint.getArgs();//2.传参
             request.setParams(params);
-//
             RpcfxResponse response = post(request, "http://localhost:8080/");
-
+            if(!response.isStatus()){    //为true表示处理成功,为false表示处理失败
+                System.out.println("======客户端请求服务端失败，异常信息为:"+response.getException().getLocalizedMessage());
+            }
             // 这里判断response.status，处理异常
             // 考虑封装一个全局的RpcfxException
             Object result = JSON.parse(response.getResult().toString());
+            System.out.println("======Rpc客戶端切面处理完毕");
             return result;
-//              Object responsePam = joinpoint.proceed();
-
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }

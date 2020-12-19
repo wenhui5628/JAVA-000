@@ -1,6 +1,7 @@
 package io.kimmking.rpcfx.demo.consumer.netty;
 
 import com.alibaba.fastjson.JSON;
+import io.kimmking.rpcfx.api.RpcfxResponse;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -14,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * 客户端处理器
  */
-public class ClientHandler extends ChannelInboundHandlerAdapter {
+public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 
 
     @Override
@@ -22,25 +23,26 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
         FullHttpResponse response = (FullHttpResponse) msg;
 
-        ByteBuf content = response.content();
+        ByteBuf respJson = response.content();
         HttpHeaders headers = response.headers();
-
-        System.out.println("content:" + System.getProperty("line.separator") + content.toString(CharsetUtil.UTF_8));
-        System.out.println("headers:" + System.getProperty("line.separator") + headers.toString());
+        RpcfxResponse result = JSON.parseObject(respJson.toString(CharsetUtil.UTF_8), RpcfxResponse.class);
+        if(!result.isStatus()){    //为true表示处理成功,为false表示处理失败
+            System.out.println("======客户端请求服务端失败，异常信息为:"+result.getException().getLocalizedMessage());
+        }
+        System.out.println("======response json:" + System.getProperty("line.separator") + respJson.toString(CharsetUtil.UTF_8));
+        System.out.println("======response headers:" + System.getProperty("line.separator") + headers.toString());
     }
 
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         URI url = new URI("/");
-        String meg = "{\"method\":\"findById\",\"params\":[1],\"serviceClass\":\"io.kimmking.rpcfx.demo.api.UserService\"}";
-//        String json = JSON.toJSONString(meg);
-        //转成btye数组   utf-8模式
-//        byte[] bytes = json.getBytes(StandardCharsets.UTF_8);
+        String reqJson = "{\"method\":\"findById\",\"params\":[1],\"serviceClass\":\"io.kimmking.rpcfx.demo.api.UserService\"}";
+        System.out.println("======req json: " + reqJson);
 
         //配置HttpRequest的请求数据和一些配置信息
         FullHttpRequest request = new DefaultFullHttpRequest(
-                HttpVersion.HTTP_1_0, HttpMethod.POST, url.toASCIIString(), Unpooled.wrappedBuffer(meg.getBytes("UTF-8")));
+                HttpVersion.HTTP_1_0, HttpMethod.POST, url.toASCIIString(), Unpooled.wrappedBuffer(reqJson.getBytes("UTF-8")));
 
         request.headers()
                 .set(HttpHeaderNames.CONTENT_TYPE, "application/json;charset=UTF-8")

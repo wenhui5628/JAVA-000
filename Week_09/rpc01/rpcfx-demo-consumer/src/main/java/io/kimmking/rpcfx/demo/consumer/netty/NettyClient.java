@@ -13,7 +13,7 @@ import java.net.InetSocketAddress;
 /**
  * 客户端
  */
-public class Client {
+public class NettyClient {
 
     //线程组
     private static final EventLoopGroup group = new NioEventLoopGroup();
@@ -45,7 +45,7 @@ public class Client {
                             //解压
                             channel.pipeline().addLast(new HttpContentDecompressor());
 
-                            channel.pipeline().addLast(new ClientHandler());
+                            channel.pipeline().addLast(new NettyClientHandler());
                         }
                     });
 
@@ -60,7 +60,7 @@ public class Client {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Client.start();
+        NettyClient.start();
     }
 
 }
