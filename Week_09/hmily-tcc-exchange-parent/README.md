@@ -5,7 +5,7 @@
 3）设计账户表，冻结资产表，实现上述两个本地事务的分布式事务。
 
 ### 业务场景分析，见下图：
-![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_09/%E4%BA%A4%E6%98%93%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90.png)
+![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_09/%E5%A4%96%E6%B1%87%E4%B9%B0%E5%8D%96%E4%BA%A4%E6%98%93%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90.png)
 
 ### 项目结构说明
 工程分为三个模块，分别是
