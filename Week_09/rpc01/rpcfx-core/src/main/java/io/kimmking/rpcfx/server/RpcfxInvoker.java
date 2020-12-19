@@ -2,12 +2,11 @@ package io.kimmking.rpcfx.server;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import io.kimmking.rpcfx.RpcException;
+import io.kimmking.rpcfx.exception.RpcException;
 import io.kimmking.rpcfx.api.RpcfxRequest;
 import io.kimmking.rpcfx.api.RpcfxResolver;
 import io.kimmking.rpcfx.api.RpcfxResponse;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
@@ -36,7 +35,6 @@ public class RpcfxInvoker<T> {
             // 两次json序列化能否合并成一个
             response.setResult(JSON.toJSONString(result, SerializerFeature.WriteClassName));
             response.setStatus(true);
-            int num = 1/0;
             return response;
         } catch (Exception e) {
             System.err.println("服务端处理出现异常，异常信息为"+e);

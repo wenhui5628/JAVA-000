@@ -103,7 +103,54 @@ public class RpcAspect {
         return JSON.parseObject(respJson, RpcfxResponse.class);
     }
 }
+```
+3.涉及的applicationContext.xml配置如下：
+```properties
+<context:component-scan base-package="io.kimmking.rpcfx.demo.consumer"/>
+    <aop:aspectj-autoproxy expose-proxy="true"></aop:aspectj-autoproxy>
+    <!-- 1、基于xml的普通装配 -->
+    <bean id="userService" class="io.kimmking.rpcfx.demo.consumer.UserServiceImpl"/>
+```
+4.在rpcfx-core中自定义一个异常类RpcException.java，用于供服务器处理出错时使用,代码如下:
+```java
+package io.kimmking.rpcfx.exception;
 
+public class RpcException extends RuntimeException{
+    private static final long serialVersionUID = 1L;
+    private String code;
+
+    public RpcException(){
+        super();
+    }
+    public RpcException(String errorCode,String errMsg){
+        super(errMsg);
+        code=errorCode;
+    }
+    public String getCode() {
+        return code;
+    }
+}
+```
+5.在服务端RpcfxInvoker.java中加上异常处理代码，如下：
+```java
+  try {
+//            Method method = resolveMethodFromClass(service.getClass(), request.getMethod());
+            Method method = resolveMethodFromClassAndParam(service.getClass(), request.getMethod());
+
+            Object result = method.invoke(service, request.getParams()); // dubbo, fastjson,
+            // 两次json序列化能否合并成一个
+            response.setResult(JSON.toJSONString(result, SerializerFeature.WriteClassName));
+            response.setStatus(true);
+            return response;
+        } catch (Exception e) {
+            System.err.println("服务端处理出现异常，异常信息为"+e);
+            // 3.Xstream
+            // 2.封装一个统一的RpcfxException
+            // 客户端也需要判断异常
+            response.setException(new RpcException("RPCE001", e.getLocalizedMessage()));
+            response.setStatus(false);
+            return response;
+        }
 ```
 
 #### 3）尝试使用Netty+HTTP作为client端传输方式
