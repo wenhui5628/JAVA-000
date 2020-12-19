@@ -82,3 +82,15 @@ AccountInfoServiceImpl为外汇交易业务实现类
 在cancel那一步做了以下操作：
 当出现异常时，会调用此方法进行回滚
 ```
+### tcc-demo-bank2的代码结构基本和tcc-demo-bank1一致
+下面说一下业务处理类AccountInfoServiceImpl的业务逻辑，同样是分为try,confirm和cancel三步
+在try那一步做了以下操作：
+1.针对B的人民币账户生成一笔冻结记录；
+2.将B的人民币账户的账户余额减7；
+
+在confirm那一步做了以下操作：
+1.将B账户的美元账户的账户余额加1；
+2.删除在try那一步生成的冻结记录;
+
+在cancel那一步做了以下操作：
+当出现异常时，会调用此方法进行回滚
