@@ -152,8 +152,30 @@ public class RpcException extends RuntimeException{
             return response;
         }
 ```
+6.客户端对异常处理如下：
+```java
+// 这里判断response.status，处理异常
+// 考虑封装一个全局的RpcfxException
+RpcfxResponse response = post(request, "http://localhost:8080/");
+if(!response.isStatus()){    //为true表示处理成功,为false表示处理失败
+  System.out.println("======客户端请求服务端失败，异常信息为:"+response.getException().getLocalizedMessage());
+}
+```
 
 #### 3）尝试使用Netty+HTTP作为client端传输方式
+见rpcfx-demo-consumer的NettyClient.java和NettyClientHandler.java
+这是需要注意的点是构造FullHttpRequest请求对象时，要将请求设置成POST模式，并且请求头需要指定报文格式为json报文，如下：
+```java
+        //配置HttpRequest的请求数据和一些配置信息
+        FullHttpRequest request = new DefaultFullHttpRequest(
+                HttpVersion.HTTP_1_0, HttpMethod.POST, url.toASCIIString(), Unpooled.wrappedBuffer(reqJson.getBytes("UTF-8")));
 
+        request.headers()
+                .set(HttpHeaderNames.CONTENT_TYPE, "application/json;charset=UTF-8")
+                //开启长连接
+                .set(HttpHeaderNames.CONNECTION, HttpHeaderValues.KEEP_ALIVE)
+                //设置传递请求内容的长度
+                .set(HttpHeaderNames.CONTENT_LENGTH, request.content().readableBytes());
+```
 
 
