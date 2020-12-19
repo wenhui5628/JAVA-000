@@ -64,12 +64,12 @@ Bank1TccServer为服务启动入口程序
 Bank1Controller为请求访问入口程序
 AccountInfoDao和AccountFreezeInfoDao分别是账户信息表和冻结账户信息持久化对象
 AccountInfoServiceImpl为外汇交易业务实现类
-
-业务处理处理一共有三部，分别是try,confirm和cancel
-下面以这个业务场景介绍代码的处理：
-1）用户A的美元账户和人民币账户都在A库，使用1美元兑换7人民币；
-2）用户B的美元账户和人民币账户都在B库，使用7人民币兑换1美元；
-
+```
+业务处理处理一共有三步，分别是try,confirm和cancel  
+下面以这个业务场景介绍代码的处理：  
+1）用户A的美元账户和人民币账户都在A库，使用1美元兑换7人民币；  
+2）用户B的美元账户和人民币账户都在B库，使用7人民币兑换1美元；  
+```properties 3
 在try那一步做了以下操作：
 1.针对A的美元账户生成一笔冻结记录；
 2.将A的美元账户的账户余额减1；
@@ -82,9 +82,11 @@ AccountInfoServiceImpl为外汇交易业务实现类
 在cancel那一步做了以下操作：
 当出现异常时，会调用此方法进行回滚
 ```
-### tcc-demo-bank2的代码结构基本和tcc-demo-bank1一致
+
+### 下面对tcc-demo-bank2做一下介绍
+代码结构基本和tcc-demo-bank1一致；  
+业务处理类AccountInfoServiceImpl的业务逻辑，同样是分为try,confirm和cancel三步
 ```properties 2
-下面说一下业务处理类AccountInfoServiceImpl的业务逻辑，同样是分为try,confirm和cancel三步
 在try那一步做了以下操作：
 1.针对B的人民币账户生成一笔冻结记录；
 2.将B的人民币账户的账户余额减7；
