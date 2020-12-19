@@ -8,13 +8,16 @@
 ![image](https://github.com/wenhui5628/JAVA-000/blob/main/Week_09/%E5%A4%96%E6%B1%87%E4%B9%B0%E5%8D%96%E4%BA%A4%E6%98%93%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90.png)
 
 ### 项目结构说明
-工程分为三个模块，分别是  
+工程分为三个模块，如下：
+```properties 4
 tcc-demo-bank1  
 tcc-demo-bank2  
-eureka-test  
+eureka-test
+
 其中eureka-test是用于启动eureka，用于服务注册和发现；  
 tcc-demo-bank1是用于模拟用户A的美元账户和人民币账户都在A库，使用1美元兑换7人民币的操作；  
 tcc-demo-bank2是用于模拟用户B的美元账户和人民币账户都在B库，使用7人民币兑换1美元的操作；  
+``` 
 
 ### 涉及的数据库表见工程中的hmily-tcc-demo.sql，一共三张表，分别是客户信息表，账户信息表以及账户冻结信息表，如下：
 由于人民币账户和美元账户信息属性是一致的，不同的只是币种，故将人民币账户信息和美元账户都存放在账户信息表中，用账户币种字段区分这两种账户信息
