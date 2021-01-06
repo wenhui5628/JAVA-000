@@ -181,7 +181,7 @@ redis-server.exe sentinel26379.conf --sentinel
 redis-server.exe sentinel26380.conf --sentinel
 redis-server.exe sentinel26381.conf --sentinel
 ```
-启动结果如下：
+启动结果如下：  
 26379端口：  
 ```shell
 D:\geek\redis\Redis-x64-3.2.100>redis-server.exe sentinel26379.conf --sentinel
