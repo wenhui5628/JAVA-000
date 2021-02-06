@@ -30,30 +30,103 @@ Github。
 这一周，主要学到的是不同类型的垃圾回收器的特点以及区别，并通过设置不同的JVM参数，以及指定使用不同的垃圾回收器运行GCLogAnalysis.java这个程序直观的认识到各种垃圾收集器之间的区别；此外，这周还接触了netty，并通过作业学习如何使用httpClient和OkHttp发起请求到服务端，为后续使用netty实现简易网关做准备。
 
 - 第三周([作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_03))
+```
+1、按今天的课程要求，实现一个网关，基础代码可以 fork：https://github.com/kimmking/JavaCourseCodes02nio/nio02 文件夹下
+1）整合上次作业的 httpclient/okhttp
+2)实现过滤器
+3)实现路由
+```
+这周主要是基于老师使用netty搭建的网关雏形进行改造，通过改造的过程，了解了网关主要的功能是什么，并且知道如何通过代码实现网关的请求转发，过滤，以及路由的功能。
 
 - 第四周([作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_04))
+```
+1.（必做）思考有多少种方式，在 main 函数启动一个新线程，运行一个方法，拿到这个方法的返回值后，退出主线程？写出你的方法，越多越好，提交到 Github。
+2.（必做）把多线程和并发相关知识带你梳理一遍，画一个脑图，截图上传到 Github 上。可选工具：xmind，百度脑图，wps，MindManage 或其他。
+```
+这周主要学习了JAVA多线程相关的知识，以前我只知道继承Thread和实现Runnable接口两种方式创建新的线程，通过学习，了解到原来还有很多方式可以启动一个新线程运行的，比如FutureTask、Future、Executors、ThreadFactory、CountDownLatch、CompletableFuture、CyclicBarrier等，而要实现调用异步线程获取返回结果，除了以上方式外，还可以通过wait和notify的结合，以及Lock和Condition的结合，Join的使用，都能达到这个目标，最后也整理了一张多线程和并发相关的知识脑图，进一步梳理了并发编程相关的知识，其实并发编程这一块涉及的知识非常多，也是很多互联网企业看重，并且面试官很喜欢问的一块知识，而在我的过往从业经历中，并发编程这一块涉及的太少，所以这一块知识，后续还需要制造更多的机会使用从而更加深入的学习。
 
 - 第五周([作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_05))
+```
+（必做）写代码实现Spring Bean的装配，方式越多越好（XML、Annotation都可以）,提交到Github。
+（超级挑战）尝试使用ByteBuddy与Instrument实现一个简单JavaAgent实现无侵入下的 AOP；
+（必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
+（必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：
+```
+这一周，来到了平时用的最熟悉的spring框架了，其实学下来，平时自己对spring的熟悉程度也仅仅是会用xml和Annotation的方式装配Bean，对于配置类甚至自动装配的方式用的很少，而自己平时也没仔细研究spring bean的装配，背后的处理逻辑以及底层源码是如何实现的，其实我觉得这一篇的学习，重点应该是当我们使用了xml或者Annotation装配时，Spring框架背后是做了什么样的处理，如果是由自己去实现的话，又改如何实现这种效果；另外，在这周的学习中，通过老师布置的挑战题，了解了ByteBuddy和Instrument技术，是可以对字节码进行增强来实现无侵入的AOP的；这周还学习了SpringBoot是如何做到通过Starter对类进行自动配置的；最后，这周还研究了JDBC的原生接口以及Hikari数据库连接池，算是对JDBC做了一个复习，这周的必做作业没有Mybatis相关的，后续由时间我要深入研究一下Mybatis的底层源码，看看我们平时使用的这个持久层框架进行的增删改查的操作，背后都是如何处理的。
 
 - 第六周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_06)
+```
+（必做）：基于电商交易场景（用户、商品、订单），设计一套简单的表结构，提交DDL 的 SQL 文件到 Github（后面2周的作业依然要是用到这个表结构）。
+```
+这周主要学习的是关系型数据库原理，数据库设计以及性能优化相关的内容，并通过设计电商交易平台这个作业让我们深入的思考，一套好的表结构应该如何设计，也了解到数据库性能的优化，其实是跟数据库表的涉及是必不可分的。
 
 - 第七周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_07)
+```
+一、（必做）按自己设计的表结构，插入100万订单模拟数据，测试不同方式的插入效率。
+二、（必做）读写分离-动态切换数据源版本1.0
+三、（必做）读写分离-数据库框架版本2.0，使用ShardingSphere-jdbc 的 Master-Slave 功能，实现 1）SQL 解析和事务管理，自动实现读写分离 2）解决”写完读”不一致的问题
+```
+这一周，主要是学习了Mysql事务以及锁、DB和SQL优化从哪些方面考虑，然后还学习了Mysql的主从复制、读写分离、高可用等是如何做到的，也接触了ShardingSphere这样的数据库中间件提供的解决方案，并通过作业熟悉了对ShardingSphere中间件的使用。
 
 - 第八周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_08)
+```
+1、（必做）设计对前面的订单表数据进行水平分库分表，拆分2个库，每个库16张表。并在新结构在演示常见的增删改查操作。代码、sql 和配置文件，上传到 Github。
+2、（必做）基于hmily TCC或ShardingSphere的Atomikos XA实现一个简单的分布式 事务应用demo（二选一），提交到github。
+```
+这一周学习的主要内容是数据库拆分，包括垂直拆分和水平拆分，以及ShardingSphere提供的分库分表的解决方案；此外，这周还学习了分布式事务，以及hmily TCC和Atomikos XA提供的分布式事务解决方案，这一周的学习，对分布式事务感觉只停留在了概念的程度上，还没办法将分布式事务使用在实际的业务场景中。
 
 - 第九周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_09)
+```
+1、（必做）改造自定义RPC的程序，提交到github：
+1）尝试将服务端写死查找接口实现类变成泛型和反射；
+2）尝试将客户端动态代理改成AOP，添加异常处理 ；
+3）尝试使用Netty+HTTP作为client端传输方式
+2、（必做）结合dubbo+hmily，实现一个TCC外汇交易处理，代码提交到github：
+1）用户A的美元账户和人民币账户都在A库，使用1美元兑换7人民币；
+2）用户B的美元账户和人民币账户都在B库，使用7人民币兑换1美元；
+3）设计账户表，冻结资产表，实现上述两个本地事务的分布式事务。
+```
+这一周，主要学习的是RPC以及分布式服务化，并通过自己实现一个简单的RPC，了解RPC调用的调用原理，此外，这周还学习了dubbo，并通过dubbo和hmily的结合，来更进一步了解RPC调用与分布式事务结合的使用场景。
 
 - 第十周
+这周学习的是Spring Cloud与微服务架构，这周没有必做的作业，然后当时因为老师没布置必做作业，所以对Spring Cloud也没做研究，讲完之后感觉忘得差不多了，后头再找个时间重新听听老师这部分的课。
 
 - 第十一周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_11)
+```
+1、（必做）基于Redis封装分布式数据操作：
+1）在Java中实现一个简单的分布式锁；
+见：redis-lock-demo工程的com.redis.demo.lock.RedisLock
+2）在Java中实现一个分布式计数器，模拟减库存。
+见：redis-lock-demo工程的com.redis.demo.RedisLockDemoApplication
+```
+本周主要是学习了Redis，包括Redis基本功能、使用场景、.Redis的Java客户端、Redis与Spring整合、Redis的高级功能，并通过作业，更深入的了解在Java中该如何基于Redis封装分布式数据操作。
 
 - 第十二周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_12)
+```
+1、（必做）配置redis的主从复制，sentinel高可用，Cluster集群。
+```
+本周主要学习的是Redis集群以及高可用、Redisson、Hazelcast，并通过作业对redis如何实现主从复制，sentinel高可用，Cluster集群加深印象。
 
 - 第十三周
+```
+1、（必做）搭建一个3节点Kafka集群，测试功能和性能；实现spring kafka下对kafka集群 的操作，将代码提交到github。
+```
+这周主要学习了消息队列以及消息中间件相关的内容，其实这一块应该要好好学习，因为消息中间件在平时工作中用的还是挺多的，我们公司目前也有使用MQ，但是我一直都不太了解MQ的工作原理，以及各种消息中间件产品的区别，这周的作业一直没有提交，这部分知识也一直还没进行复习和回顾，后续需要再次深入学习下。
 
 - 第十四周
+```
+2、（必做）思考和设计自定义MQ第二个版本或第三个版本，写代码实现其中至少一 个功能点，把设计思路和实现代码，提交到github。
+```
+这周和上周一样，依然还是消息中间件的内容，后续深入研究后再更新这部分知识的总结。
 
-- 第十五周[作业详情](https://github.com/wenhui5628/JAVA-000/tree/main/Week_04)
+- 第十五周 
+```
+1、（必做）针对课上讲解的内容，自己动手设计一个高并发的秒杀系统，讲架构图， 设计文档等，提交到github。
+```
+这周的作业，需要对之前所有知识点有一个很好的掌握的前提下才能做出来，所以这次的作业我也没有提交，计划是对前面的所有知识都梳理清楚后，再来尝试做这个作业，相信到时候会有一些思路。
 
-最后，补上一张知识点汇总的思维导图：
+以上就是我对训练营以来每周的学习以及作业完成情况的回顾，最后，再附上总的思维脑图，如下：
 ![image](https://raw.githubusercontent.com/wenhui5628/JAVA-000/main/Week_15/JAVA%E8%BF%9B%E9%98%B6%E8%AE%AD%E7%BB%83%E8%90%A5.png)
+
+
+
